@@ -1,0 +1,84 @@
+{
+  "project": "document-intake-review",
+  "observed_on": "2026-10-09",
+  "source_manifest_sha256": "0f68313e9ae0da601d1dd360e4dd188b4fb5f11109c723ad3ed5edc8c4abaeef",
+  "components": [
+    {
+      "distribution": "docling-slim",
+      "version": "2.135.0",
+      "package": "docling",
+      "repository": "https://github.com/docling-project/docling",
+      "commit": "2b3a00c5bfcd8b218d32e7e9c33d509aeaa0cb56",
+      "license": "MIT",
+      "license_path": "components/docling-slim/LICENSE",
+      "selection": "Complete upstream Python package and original build inputs; no tests, model weights, external assets or unrelated workspace packages.",
+      "copied_files": 292,
+      "copied_physical_lines": 97009,
+      "modified_source_lines": 0
+    },
+    {
+      "distribution": "docling-core",
+      "version": "2.101.1",
+      "package": "docling_core",
+      "repository": "https://github.com/docling-project/docling-core",
+      "commit": "f61fbf5cd4384a6307c63131a3f2f70d517b5f51",
+      "license": "MIT",
+      "license_path": "components/docling-core/LICENSE",
+      "selection": "Complete upstream Python package and original build inputs; no tests, model weights, external assets or unrelated workspace packages.",
+      "copied_files": 109,
+      "copied_physical_lines": 34258,
+      "modified_source_lines": 0
+    }
+  ],
+  "copied_source_files": 401,
+  "component_wheel_payload_files": 394,
+  "modified_copied_source_lines": 0,
+  "comparison": {
+    "linux": {
+      "result": "exact original/duplicate/composition equality",
+      "tests_passed": 36
+    },
+    "windows": {
+      "result": "installed composition verified; original comparison unverified",
+      "tests_passed": 35,
+      "tests_skipped": 1,
+      "skip_reason": "symlink creation unavailable"
+    },
+    "items": 7,
+    "table_shape": [
+      3,
+      3
+    ],
+    "content_sha256": "972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b"
+  },
+  "both_platforms": {
+    "source_wheel_build": "passed",
+    "pip_check": "passed",
+    "ruff": "passed",
+    "loaded_source_modules_verified": 101,
+    "cli_demo_commands": 12,
+    "approved_export_items": 7
+  },
+  "independent_review": {
+    "verdict": "ACCEPT_FOR_LOCAL_SOURCE_COMPOSITION_WITH_NONBLOCKING_LIMITATION",
+    "source_files_checked": 401,
+    "wheel_payload_files_checked": 394,
+    "nonblocking_limit": "Runtime guard checks local wheel origin presence; build verification separately checks actual wheel-hash correspondence",
+    "inherited_store_ast_unchanged": true
+  },
+  "source_hashes": {
+    "intake_review.py": "ead528f281af617bf1222192ab290f6e2cd70aec2398343f508ccdece7394007",
+    "tests/test_intake.py": "7e5e2399897268f198da71df3ed785d58125c46f3c324ca5c87bb1cc75c9a862",
+    "tests/test_source_identity.py": "7bb45f923c6ab0b76aba75db00884ace72792a9b40d7f52b1bdd872deb320ead",
+    "source_identity/__init__.py": "6a19a24d7356f79b804cb9474b878dba5201c0f0b94f8aa2f1c3b94d44c259c3",
+    "source_identity/manifest.json": "0f68313e9ae0da601d1dd360e4dd188b4fb5f11109c723ad3ed5edc8c4abaeef"
+  },
+  "private_receipt_sha256": "6ac37484e9c16cb3a976cb033f4e494e483ff99e13b507ef4672492469067784",
+  "independent_report_sha256": "aa66d59bfa1532fed1a4420d74b3fb2775f35690ac5192ad86b6d3b8d0fdc7a9",
+  "limits": [
+    "Windows original source extraction comparison unverified",
+    "No full upstream optional-format/model suites",
+    "Remote CI has not run",
+    "Owner-controlled local gate; reviewer labels and integrity hashes are not authenticated signatures"
+  ]
+}

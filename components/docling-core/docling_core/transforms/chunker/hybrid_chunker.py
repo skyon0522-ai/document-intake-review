@@ -1,0 +1,413 @@
+"""Hybrid chunker implementation leveraging both doc structure & token awareness."""
+
+import warnings
+from collections.abc import Iterable, Iterator
+from functools import cached_property
+from typing import Any, Optional, Union, cast
+
+from pydantic import BaseModel, ConfigDict, Field, computed_field, model_validator
+
+from docling_core.transforms.chunker import (
+    BaseChunk,
+    BaseChunker,
+    DocChunk,
+    DocMeta,
+    HierarchicalChunker,
+)
+from docling_core.transforms.chunker.hierarchical_chunker import (
+    ChunkingDocSerializer,
+    ChunkingSerializerProvider,
+)
+from docling_core.transforms.chunker.line_chunker import LineBasedTokenChunker
+from docling_core.transforms.chunker.tokenizer.base import BaseTokenizer
+from docling_core.transforms.serializer.base import (
+    BaseDocSerializer,
+    BaseSerializerProvider,
+)
+from docling_core.types.doc import DoclingDocument, SectionHeaderItem, TableItem, TitleItem
+
+_SEMCHUNK_AVAILABLE: bool = False
+_SEMCHUNK_IMPORT_ERROR: ImportError | None = None
+try:
+    import semchunk
+
+    _SEMCHUNK_AVAILABLE = True
+except ImportError as e:
+    _SEMCHUNK_IMPORT_ERROR = e
+
+_SEMCHUNK_INSTALL_HINT = (
+    "The 'semchunk' package is required by HybridChunker. "
+    "Install it with `pip install 'docling-core[chunking]'` or "
+    "`pip install 'docling-core[chunking-openai]'`."
+)
+
+
+def _get_default_tokenizer():
+    """Get default tokenizer instance.
+
+    Defer import to avoid pulling in transformers at module import time.
+    """
+    from docling_core.transforms.chunker.tokenizer.huggingface import get_default_tokenizer
+
+    return get_default_tokenizer()
+
+
+class HybridChunker(BaseChunker):
+    r"""Chunker doing tokenization-aware refinements on top of document layout chunking.
+
+    Args:
+        tokenizer: The tokenizer to use; either instantiated object or name or path of
+            respective pretrained model
+        max_tokens: The maximum number of tokens per chunk. If not set, limit is
+            resolved from the tokenizer
+        repeat_table_headers: Whether to repeat a table header if the table is chunked
+        merge_peers: Whether to merge undersized chunks sharing same relevant metadata
+        always_emit_headings: Whether to emit headings even for empty sections
+        omit_header_on_overflow: Only used when repeat_table_header is True. When True,
+            omit table headers for rows that would overflow with them.
+    """
+
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+
+    tokenizer: BaseTokenizer = Field(default_factory=_get_default_tokenizer)
+    repeat_table_header: bool = True
+    merge_peers: bool = True
+    omit_header_on_overflow: bool = False
+
+    serializer_provider: BaseSerializerProvider = ChunkingSerializerProvider()
+    always_emit_headings: bool = False
+
+    @model_validator(mode="before")
+    @classmethod
+    def _patch(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            tokenizer = data.get("tokenizer")
+            max_tokens = data.get("max_tokens")
+            if not isinstance(tokenizer, BaseTokenizer) and (
+                # some legacy param passed:
+                tokenizer is not None or max_tokens is not None
+            ):
+                from docling_core.transforms.chunker.tokenizer.huggingface import (
+                    HuggingFaceTokenizer,
+                )
+
+                warnings.warn(
+                    "Deprecated initialization parameter types for HybridChunker. "
+                    "For updated usage check out "
+                    "https://docling-project.github.io/docling/examples/hybrid_chunking/",
+                    DeprecationWarning,
+                )
+
+                if isinstance(tokenizer, str):
+                    data["tokenizer"] = HuggingFaceTokenizer.from_pretrained(
+                        model_name=tokenizer,
+                        max_tokens=max_tokens,
+                    )
+                elif tokenizer is None or (
+                    hasattr(tokenizer, "__module__")
+                    and (tokenizer.__module__.startswith("transformers.") or tokenizer.__module__ == "transformers")
+                ):
+                    from docling_core.transforms.chunker.tokenizer.huggingface import (
+                        HuggingFaceTokenizer,
+                    )
+
+                    kwargs = {"tokenizer": tokenizer or _get_default_tokenizer().tokenizer}
+                    if max_tokens is not None:
+                        kwargs["max_tokens"] = max_tokens
+                    data["tokenizer"] = HuggingFaceTokenizer(**kwargs)
+        return data
+
+    @property
+    def max_tokens(self) -> int:
+        """Get maximum number of tokens allowed."""
+        return self.tokenizer.get_max_tokens()
+
+    @computed_field  # type: ignore[misc]
+    @cached_property
+    def _inner_chunker(self) -> HierarchicalChunker:
+        return HierarchicalChunker(
+            serializer_provider=self.serializer_provider,
+            always_emit_headings=self.always_emit_headings,
+        )
+
+    def _count_text_tokens(self, text: str | list[str] | None):
+        if text is None:
+            return 0
+        elif isinstance(text, list):
+            total = 0
+            for t in text:
+                total += self._count_text_tokens(t)
+            return total
+        return self.tokenizer.count_tokens(text=text)
+
+    class _ChunkLengthInfo(BaseModel):
+        total_len: int
+        text_len: int
+        other_len: int
+
+    def _count_chunk_tokens(self, doc_chunk: DocChunk):
+        ser_txt = self.contextualize(chunk=doc_chunk)
+        return self.tokenizer.count_tokens(text=ser_txt)
+
+    def _doc_chunk_length(self, doc_chunk: DocChunk):
+        text_length = self._count_text_tokens(doc_chunk.text)
+        total = self._count_chunk_tokens(doc_chunk=doc_chunk)
+        return self._ChunkLengthInfo(
+            total_len=total,
+            text_len=text_length,
+            other_len=total - text_length,
+        )
+
+    def _split_by_doc_items(self, doc_chunk: DocChunk, doc_serializer: BaseDocSerializer) -> list[DocChunk]:
+        """Split a chunk along doc-item boundaries, keeping each window within max_tokens.
+
+        Each item is serialized once and its token count cached. Windows are
+        grown with a running token estimate, re-anchored by exact counts at
+        overflow points, and shrunk back to the largest fitting window when the
+        estimate under-counts. The resulting windows match the previous
+        implementation exactly, since the largest window that fits is unique.
+
+        Args:
+            doc_chunk: The chunk to split, containing one or more doc items.
+            doc_serializer: Serializer for the document, used to obtain per-item text.
+
+        Returns:
+            A list of chunks whose windows respect max_tokens. A single item
+            that does not fit is returned as-is and split later at the
+            plain-text stage.
+        """
+        doc_items = doc_chunk.meta.doc_items
+        num_items = len(doc_items)
+        if num_items <= 1:
+            meta = DocMeta(
+                doc_items=doc_items,
+                headings=doc_chunk.meta.headings,
+                origin=doc_chunk.meta.origin,
+            )
+            return [DocChunk(text=doc_chunk.text, meta=meta)]
+
+        item_texts: list[str] = []
+        item_token_counts: list[int] = []
+        for doc_item in doc_items:
+            res_text = doc_serializer.serialize(item=doc_item).text
+            text = res_text if (res_text and not isinstance(doc_item, TitleItem | SectionHeaderItem)) else ""
+            item_texts.append(text)
+            item_token_counts.append(self.tokenizer.count_tokens(text=text))
+
+        # token cost of the delimiter between two joined items
+        delim_tokens = (
+            self.tokenizer.count_tokens(text=f"a{self.delim}b")
+            - self.tokenizer.count_tokens(text="a")
+            - self.tokenizer.count_tokens(text="b")
+        )
+
+        def build_window(window_start: int, window_end: int) -> DocChunk:
+            meta = DocMeta(
+                doc_items=doc_items[window_start : window_end + 1],
+                headings=doc_chunk.meta.headings,
+                origin=doc_chunk.meta.origin,
+            )
+            window_text = self.delim.join([t for t in item_texts[window_start : window_end + 1] if t])
+            return DocChunk(text=window_text, meta=meta)
+
+        def window_count(window_start: int, window_end: int) -> int:
+            return self._count_chunk_tokens(doc_chunk=build_window(window_start, window_end))
+
+        # constant across windows: doc_items and origin are excluded from the embed
+        # serialization (DocMeta.excluded_embed), so contextualize() only sees
+        # headings/captions, which are the same for every window in this chunk
+        meta_overhead = window_count(0, 0) - self.tokenizer.count_tokens(text=build_window(0, 0).text)
+
+        chunks: list[DocChunk] = []
+        window_start = 0
+        while window_start < num_items:
+            window_end = window_start
+            running = 0
+            while window_end < num_items:
+                running += item_token_counts[window_end] + (delim_tokens if window_end > window_start else 0)
+                if running + meta_overhead > self.max_tokens:
+                    exact = window_count(window_start, window_end)
+                    if exact <= self.max_tokens:
+                        # the estimate overshot; re-anchor it on the exact count
+                        running = exact - meta_overhead
+                        window_end += 1
+                        continue
+                    break
+                window_end += 1
+
+            if window_end == window_start:
+                # a single item doesn't fit: emit it as-is and let the
+                # plain-text splitter deal with it later
+                chunks.append(build_window(window_start, window_start))
+                window_start += 1
+                continue
+
+            end = window_end
+            while end - 1 > window_start and window_count(window_start, end - 1) > self.max_tokens:
+                end -= 1
+            chunks.append(build_window(window_start, end - 1))
+            window_start = end
+
+        return chunks
+
+    def _split_using_plain_text(
+        self,
+        doc_chunk: DocChunk,
+        doc_serializer: BaseDocSerializer,
+    ) -> list[DocChunk]:
+        lengths = self._doc_chunk_length(doc_chunk)
+        if lengths.total_len <= self.max_tokens:
+            return [DocChunk(**doc_chunk.export_json_dict())]
+        else:
+            # How much room is there for text after subtracting out the headers and
+            # captions:
+            available_length = self.max_tokens - lengths.other_len
+
+            if available_length <= 0:
+                warnings.warn(
+                    "Headers and captions for this chunk are longer than the total "
+                    "available size for the chunk, so they will be ignored: "
+                    f"{doc_chunk.text=}, {doc_chunk.meta=}"
+                )
+                new_chunk = DocChunk(**doc_chunk.export_json_dict())
+                new_chunk.meta.captions = None
+                new_chunk.meta.headings = None
+                return self._split_using_plain_text(doc_chunk=new_chunk, doc_serializer=doc_serializer)
+
+            segments = self.segment(doc_chunk, available_length, doc_serializer)
+            chunks = [DocChunk(text=s, meta=doc_chunk.meta) for s in segments]
+            return chunks
+
+    def segment(self, doc_chunk: DocChunk, available_length: int, doc_serializer: BaseDocSerializer) -> list[str]:
+        """Split a single doc chunk into a list of text segments.
+
+        Two strategies are applied depending on the chunk's content:
+
+        - Table with header repetition: when ``repeat_table_header`` is
+          enabled and the chunk contains exactly one ``TableItem``, the table is
+          split line-by-line via ``LineBasedTokenChunker``.  The header rows are
+          used as a prefix so they are reproduced at the top of every segment.
+          Any preamble text that precedes the first table row (e.g. a caption) is
+          included in the prefix to account for its token cost, but is stripped
+          from all segments after the first so it does not repeat.
+
+        - Semantic splitting: for all other chunks, ``semchunk`` splits the
+          text at natural semantic boundaries up to ``available_length`` tokens.
+
+        Args:
+            doc_chunk: The chunk to segment.
+            available_length: Maximum token budget for the semantic-splitting
+                path (ignored for the table path, which uses ``self.tokenizer``
+                and ``self.max_tokens`` internally).
+            doc_serializer: Serializer for the current document; must be a
+                ``ChunkingDocSerializer`` for the table path to activate.
+
+        Returns:
+            A list of text segments derived from ``doc_chunk.text``.
+        """
+        segments = []
+        if (
+            self.repeat_table_header
+            and isinstance(doc_serializer, ChunkingDocSerializer)
+            and len(doc_chunk.meta.doc_items) == 1
+            and isinstance(doc_chunk.meta.doc_items[0], TableItem)
+        ):
+            header_lines, body_lines = doc_serializer.table_serializer.get_header_and_body_lines(
+                table_text=doc_chunk.text
+            )
+
+            if header_lines:
+                header_start = doc_chunk.text.find(header_lines[0])
+                preamble = doc_chunk.text[:header_start] if header_start > 0 else ""
+            else:
+                preamble = ""
+            table_prefix = "".join(header_lines)
+            full_prefix = preamble + table_prefix
+
+            line_chunker = LineBasedTokenChunker(
+                tokenizer=self.tokenizer,
+                prefix=full_prefix,
+                omit_prefix_on_overflow=self.omit_header_on_overflow,
+                serializer_provider=self.serializer_provider,
+            )
+            segments = line_chunker.chunk_text(lines=body_lines)
+            if preamble:
+                segments = segments[:1] + [s[len(preamble) :] for s in segments[1:]]
+        else:
+            if not _SEMCHUNK_AVAILABLE:
+                raise ImportError(_SEMCHUNK_INSTALL_HINT) from _SEMCHUNK_IMPORT_ERROR
+            sem_chunker = semchunk.chunkerify(self.tokenizer.get_tokenizer(), chunk_size=available_length)
+            sem_segments = sem_chunker(doc_chunk.text)
+            segments = cast(list[str], sem_segments)
+        return segments
+
+    def _merge_chunks_with_matching_metadata(self, chunks: list[DocChunk]):
+        output_chunks = []
+        window_start = 0
+        window_end = 0  # an inclusive index
+        num_chunks = len(chunks)
+        while window_end < num_chunks:
+            chunk = chunks[window_end]
+            headings = chunk.meta.headings
+            ready_to_append = False
+            if window_start == window_end:
+                current_headings = headings
+                window_end += 1
+                first_chunk_of_window = chunk
+            else:
+                chks = chunks[window_start : window_end + 1]
+                doc_items = [it for chk in chks for it in chk.meta.doc_items]
+                candidate = DocChunk(
+                    # TODO: merging should ideally be done by the serializer:
+                    text=self.delim.join([chk.text for chk in chks]),
+                    meta=DocMeta(
+                        doc_items=doc_items,
+                        headings=current_headings,
+                        origin=chunk.meta.origin,
+                    ),
+                )
+                if headings == current_headings and self._count_chunk_tokens(doc_chunk=candidate) <= self.max_tokens:
+                    # there is room to include the new chunk so add it to the window and
+                    # continue
+                    window_end += 1
+                    new_chunk = candidate
+                else:
+                    ready_to_append = True
+            if ready_to_append or window_end == num_chunks:
+                # no more room OR the start of new metadata.  Either way, end the block
+                # and use the current window_end as the start of a new block
+                if window_start + 1 == window_end:
+                    # just one chunk so use it as is
+                    output_chunks.append(first_chunk_of_window)
+                else:
+                    output_chunks.append(new_chunk)
+                # no need to reset window_text, etc. because that will be reset in the
+                # next iteration in the if window_start == window_end block
+                window_start = window_end
+
+        return output_chunks
+
+    def chunk(
+        self,
+        dl_doc: DoclingDocument,
+        **kwargs: Any,
+    ) -> Iterator[BaseChunk]:
+        r"""Chunk the provided document.
+
+        Args:
+            dl_doc (DLDocument): document to chunk
+
+        Yields:
+            Iterator[Chunk]: iterator over extracted chunks
+        """
+        my_doc_ser = self.serializer_provider.get_serializer(doc=dl_doc)
+        res: Iterable[DocChunk]
+        res = self._inner_chunker.chunk(
+            dl_doc=dl_doc,
+            **kwargs,
+        )  # type: ignore
+        res = [x for c in res for x in self._split_by_doc_items(c, doc_serializer=my_doc_ser)]
+        res = [x for c in res for x in self._split_using_plain_text(c, doc_serializer=my_doc_ser)]
+        if self.merge_peers:
+            res = self._merge_chunks_with_matching_metadata(res)
+        return iter(res)

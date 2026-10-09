@@ -1,0 +1,11 @@
+.v/
+.l/
+.b/
+.o/
+.source-build/
+.verification/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+build/
+*.egg-info/

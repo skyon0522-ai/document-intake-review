@@ -1,0 +1,4043 @@
+{
+  "format": 1,
+  "components": [
+    {
+      "distribution": "docling-slim",
+      "version": "2.135.0",
+      "package": "docling",
+      "repository": "https://github.com/docling-project/docling",
+      "commit": "2b3a00c5bfcd8b218d32e7e9c33d509aeaa0cb56",
+      "license": "MIT",
+      "license_path": "components/docling-slim/LICENSE",
+      "selection": "Complete upstream Python package and original build inputs; no tests, model weights, external assets or unrelated workspace packages."
+    },
+    {
+      "distribution": "docling-core",
+      "version": "2.101.1",
+      "package": "docling_core",
+      "repository": "https://github.com/docling-project/docling-core",
+      "commit": "f61fbf5cd4384a6307c63131a3f2f70d517b5f51",
+      "license": "MIT",
+      "license_path": "components/docling-core/LICENSE",
+      "selection": "Complete upstream Python package and original build inputs; no tests, model weights, external assets or unrelated workspace packages."
+    }
+  ],
+  "files": [
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/.agents/skills/docling/SKILL.md",
+      "copied_path": "components/docling-slim/docling/.agents/skills/docling/SKILL.md",
+      "sha256": "d5e0b1c0c108850621c33dab1fa3da83bcefc52351e93028752f6df973f90998",
+      "git_blob": "f6bdfa26aee4b0df5a4cdfb6b496286e3b9eedd6",
+      "physical_lines": 83,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/.agents/skills/docling/references/cli.md",
+      "copied_path": "components/docling-slim/docling/.agents/skills/docling/references/cli.md",
+      "sha256": "39b5c4024c0fa2e70fe20bf51276c7a6b19c4fa426b49255eb363be8d21d1ede",
+      "git_blob": "b76fbe65f6af0b12351c94e970fa023915bbea99",
+      "physical_lines": 156,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/.agents/skills/docling/references/extraction.md",
+      "copied_path": "components/docling-slim/docling/.agents/skills/docling/references/extraction.md",
+      "sha256": "174cc38d544a68aecd934e1706d1d4ef7df011fbc936aa0dc6f43d25dc6dafb5",
+      "git_blob": "c7a53655c80f761967ca1a204c7ff5a78e9bf417",
+      "physical_lines": 91,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/.agents/skills/docling/references/python-sdk.md",
+      "copied_path": "components/docling-slim/docling/.agents/skills/docling/references/python-sdk.md",
+      "sha256": "6ca5b1d6fc0758c2ae137b105e34c5d78f7d623c3dbea26dfe65458e11f827f0",
+      "git_blob": "54cc35d6b23f3075b12476090d5554a0eaf34fd0",
+      "physical_lines": 482,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/.agents/skills/docling/references/rag.md",
+      "copied_path": "components/docling-slim/docling/.agents/skills/docling/references/rag.md",
+      "sha256": "0036ad0e2b28b338ba23f8af508f8cefb06df12f3ef81ab620cdede51290569f",
+      "git_blob": "b5492831252174627ba01c24e97f420188c9bd85",
+      "physical_lines": 73,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/.agents/skills/docling/references/service-client.md",
+      "copied_path": "components/docling-slim/docling/.agents/skills/docling/references/service-client.md",
+      "sha256": "6e9ab15bea5ea25fa42fc99f47b7a0599882e711db32123271d4453c73821241",
+      "git_blob": "37c1b8c45035fc3147e2729f37c0fe0abd55d5cb",
+      "physical_lines": 124,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/.agents/skills/docling/references/slim-packaging.md",
+      "copied_path": "components/docling-slim/docling/.agents/skills/docling/references/slim-packaging.md",
+      "sha256": "25201405686287cca8a4244956ed91ee8d44dbb11fe914d549592e58593ad8e3",
+      "git_blob": "2d824ed5a8158fc132799c86a3e0aed73b635c3f",
+      "physical_lines": 81,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/__init__.py",
+      "copied_path": "components/docling-slim/docling/__init__.py",
+      "sha256": "e91015144f62533383d579d01a3f219c6ede99ab09f02d12e343801421bdce89",
+      "git_blob": "17bda9f88238b44ba8eddf95615b9fb530fd8591",
+      "physical_lines": 26,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/abstract_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/abstract_backend.py",
+      "sha256": "df425c1a63064ed580fd08c528cd476e52aa1ee0211776a0ba87d2a4f4f7d3a1",
+      "git_blob": "0c84a1467a8437c9358a5436062c84c35b2542d6",
+      "physical_lines": 89,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/afp_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/afp_backend.py",
+      "sha256": "a9c074d81d4acc6b8b808393ea46f3b6f1e77333e3cfc1c6c43036e93f084f21",
+      "git_blob": "f714d70789a94e98cecec39d9d9391c56f5b0519",
+      "physical_lines": 365,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/asciidoc_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/asciidoc_backend.py",
+      "sha256": "03942839ea17d700b4a066af8b5d899966bb0d635056c9d22388b81de47754a7",
+      "git_blob": "e5e29a2cb54824f5ac78ed2abde5511218025bd1",
+      "physical_lines": 826,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/boxnote_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/boxnote_backend.py",
+      "sha256": "9c8175fa12f64a680e9fd37c28fc9803d8b351d92663b4e14cf6e96d2cb7bc9d",
+      "git_blob": "d0e5b412a413dd51f5bdb9981a5a704dfd1498ab",
+      "physical_lines": 467,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/csv_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/csv_backend.py",
+      "sha256": "ca9324e3d56b94b29e55d14d5b1d2b0d26506828700af937472046aff9235fe4",
+      "git_blob": "b7ab0ba490d812e0db97f53d366f44f4d9649e3f",
+      "physical_lines": 207,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docling_parse_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/docling_parse_backend.py",
+      "sha256": "cfd94eea0cf534805e1c006b0ba2366e25a01c8641b7325923e05a9bffa6278a",
+      "git_blob": "129fbc661897daa92615cbb2c2c37ecf0a1764c5",
+      "physical_lines": 398,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docling_parse_v2_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/docling_parse_v2_backend.py",
+      "sha256": "1b873def9e3183efc60a7fd3e530f147fa93ef10ccfd8dd2728f77cba5a98f31",
+      "git_blob": "d0cd9aad99578b106c4908fbe74c773d213e0128",
+      "physical_lines": 31,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docling_parse_v4_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/docling_parse_v4_backend.py",
+      "sha256": "8de181ffc087574419be156311c2296fc44b2b8ddc1d3a8d31dd0cd434f307c9",
+      "git_blob": "9958cb9105d348dea80b3e66d65072f4becc1ca6",
+      "physical_lines": 31,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docx/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/docx/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docx/drawingml/utils.py",
+      "copied_path": "components/docling-slim/docling/backend/docx/drawingml/utils.py",
+      "sha256": "c9bed4c6c49542c26ca6d5e6a5687349e7b06dc97553b5ebdb3d0cb4493084ad",
+      "git_blob": "1646552be6576893eff73a9136086bf9455ea6a8",
+      "physical_lines": 439,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docx/latex/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/docx/latex/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docx/latex/latex_dict.py",
+      "copied_path": "components/docling-slim/docling/backend/docx/latex/latex_dict.py",
+      "sha256": "15d691a91a2d867a9464a00ad9ad3309feb32868b40ef537826be3db7c4a6339",
+      "git_blob": "fec6343566fa7768f823acb9cd717b34e72d67b7",
+      "physical_lines": 327,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/docx/latex/omml.py",
+      "copied_path": "components/docling-slim/docling/backend/docx/latex/omml.py",
+      "sha256": "e012c806867ad95413ff2c2e43df661214eca68c7804d34a8b5e712410e5ee57",
+      "git_blob": "049cac8e41d0f0ec26fb09429b0ac308c5976f0f",
+      "physical_lines": 864,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/ebcdic_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/ebcdic_backend.py",
+      "sha256": "579f4c9eb0e70d8cef7e2b3cad868297cf4480177a75a339da8d7154a703322b",
+      "git_blob": "56420830649c005645affef38bc6bc12d20f83f5",
+      "physical_lines": 329,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/email_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/email_backend.py",
+      "sha256": "768acd6889d2e56560a2551758b67b1c8698e611d3ddda3254e67c6db19affa8",
+      "git_blob": "96c3b8f6187c1154c6c4ec85749974599822237d",
+      "physical_lines": 390,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/epub_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/epub_backend.py",
+      "sha256": "c1184fbfcb690a638ddcf0b4a4a6c8b2f51fc25ba862c4c775703f7030839752",
+      "git_blob": "ef64c8c0fe8727cc0b654b6be9e15cca537229b5",
+      "physical_lines": 483,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/html_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/html_backend.py",
+      "sha256": "b54c5c56ab587f114530c15fca125f3b951c9682425dc9b216672ed7dcb690f7",
+      "git_blob": "b756f0bae4018052b8de4fb99890e5fdec600ae4",
+      "physical_lines": 5440,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/image_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/image_backend.py",
+      "sha256": "d9cdc3574f02ddc30db2f810a4adfe28c33a3d142dbbcf087d5b8d1ca4c4489e",
+      "git_blob": "0deb1866d0ab525198e9ef81d34733cf35e965b7",
+      "physical_lines": 293,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/__init__.py",
+      "sha256": "62f19a5f2580658b11e9679e975fac9d5737a44ad87ced0d43e6358fc5f5422f",
+      "git_blob": "062ac5956b3213a9e7a77237a4df87be70d8a25b",
+      "physical_lines": 16,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/archives.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/archives.py",
+      "sha256": "667106a735bbf52cd27e6a07d57ed27440be016f4901f5bc28b93557b1cb6d05",
+      "git_blob": "ef236d7ed3c64f4f073aa7a787376f96697b338c",
+      "physical_lines": 1288,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/cells.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/cells.py",
+      "sha256": "c3ec22b09a3c7c3f1630e59c42f2b3662b5f87454b4683b60df925ddf9efc1ce",
+      "git_blob": "1915c97695aa3ee1c780e5810d96e7f664e30726",
+      "physical_lines": 314,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/chart_image.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/chart_image.py",
+      "sha256": "5e159ffd4e9611bb1b11b0aea790d719e90fb1839d1ee86775676d4873b4e490",
+      "git_blob": "1005c16ccffe808fb6c4c8f7986d53662a58b478",
+      "physical_lines": 499,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/charts.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/charts.py",
+      "sha256": "e1b4586ef6d6a7f4131ff5b597efea5aaa8bfcb69c8db5e2a8f39fb7eaa0621c",
+      "git_blob": "c318c43861693eedb3aac55fb39f7b2008046762",
+      "physical_lines": 332,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/content.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/content.py",
+      "sha256": "e6201c78ebc29ae9c9a29099c1c5f5bf078a55065f8f37fc6dafcfbf3dad5e10",
+      "git_blob": "b7236a1e2c48945d2178dc19e55aefd7ab04df14",
+      "physical_lines": 457,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/iwa.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/iwa.py",
+      "sha256": "5be00e31124f2bd47285af1b68ce78e3889b7dc7c8f297bd7de18de6804cea1a",
+      "git_blob": "f7d40477686be8034eff5e5e75545d5ad894be0f",
+      "physical_lines": 295,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/keynote_content.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/keynote_content.py",
+      "sha256": "448969985eacbb9ea8a53815281af1ff0e5833232bb5381a3238149687a9577c",
+      "git_blob": "255cb24df0de4e6001411c3c6b4e80fc6a9abe73",
+      "physical_lines": 129,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/keynote_iwa.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/keynote_iwa.py",
+      "sha256": "79c08ae78a1a5dfa7e1a35d26efd3250e648c1bfad36d4eed9aaaa213a82216c",
+      "git_blob": "a2345ebab2fe6ab408464448058172f9c71f41e5",
+      "physical_lines": 392,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/keynote_xml.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/keynote_xml.py",
+      "sha256": "0ee6d9b94124c05ded8da111c80b0abd53883c1dfffd761dc08625ac995db551",
+      "git_blob": "9d559e2a5ed66baf4516fdd8185a9ba7d712380d",
+      "physical_lines": 366,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/legacy.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/legacy.py",
+      "sha256": "b3da681be5c3192d8cb96d1a7da45047f8cbc0e9c06b45f3de76bb8ee5f6be5a",
+      "git_blob": "117bab64348fa0b783106b2ad7bfb87376ef2111",
+      "physical_lines": 667,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/numbers_content.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/numbers_content.py",
+      "sha256": "c1a45c87122bf47b5b5067d80ea797850ffbd63fd00122b0473e2eadcae9d9c0",
+      "git_blob": "434c4f80f04b141bd6c113dd049ac22db87173d8",
+      "physical_lines": 167,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/numbers_iwa.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/numbers_iwa.py",
+      "sha256": "ecff7e633bea739402bb53bc004c41389423405ead1e619d77c1201e9a760604",
+      "git_blob": "6c64cca29279fa6ecec3da2f159a093e09ee3231",
+      "physical_lines": 415,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/numbers_xml.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/numbers_xml.py",
+      "sha256": "78399e6cb8404e5e8367a0bf891859f87974b883515ba88ac51f25d608e0ecdc",
+      "git_blob": "d7ca0c64d7934c79fa47205175656480e93a292d",
+      "physical_lines": 565,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/pages_iwa.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/pages_iwa.py",
+      "sha256": "1744eddcd5a900e01af370a6d19115aec8ac78ec996eeea3d93ba85f22a72613",
+      "git_blob": "6591ca2e7d91c1cde72c98a9682410241dbae3cb",
+      "physical_lines": 234,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork/pages_xml.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork/pages_xml.py",
+      "sha256": "b25f4a0bc6353e8d2294fa7fa28f6b26868e4c974f82cdc71fda8b9047d2a709",
+      "git_blob": "4681926d2d3bef5e9eaa8a1b90018a3dfc980998",
+      "physical_lines": 240,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/iwork_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/iwork_backend.py",
+      "sha256": "c5a93c855351d2492cc3d5e6a5723c33a59b017ed0c5d5f5611d33bded434823",
+      "git_blob": "686191c46e4264a972794448c428b55e502dccbd",
+      "physical_lines": 1339,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/json/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/json/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/json/docling_json_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/json/docling_json_backend.py",
+      "sha256": "c2b60fd0df987060cf682b58825bf617e6037bfa1122d021bb79d2d15761e08a",
+      "git_blob": "fd2a495eb5ce70aa4bc370b5573f6bc2a08e62b3",
+      "physical_lines": 134,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/__init__.py",
+      "sha256": "4776155626f01fa6bfe4207656c6feafed88d3a88221306ac37d6943306c8778",
+      "git_blob": "2fb405cbb9743aca5bc2989e94bcb9d7dae8f64c",
+      "physical_lines": 6,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/backend.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/backend.py",
+      "sha256": "0161f2302c1ec1230e4f81f64b31eedcd26d9b6d33947764dfdb1d8e398d84e2",
+      "git_blob": "2fedeaaee693af97dade06dca606b1c4dfaec3a7",
+      "physical_lines": 271,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/constants.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/constants.py",
+      "sha256": "91ef88b4eeb1f79583325737ca1d1588a898bff8c46d3b7888af352228346eb0",
+      "git_blob": "4899551f4e1496e1b1693143bbf39d247e818189",
+      "physical_lines": 269,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/context.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/context.py",
+      "sha256": "4a262bbb508d162a37eadbaa8fc9b72f5328193ba84dfd3beb6c110ba3e626a4",
+      "git_blob": "f55d2054d42db0c8b64f0028cedd20ca427f0734",
+      "physical_lines": 20,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/engines/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/engines/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/engines/base.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/engines/base.py",
+      "sha256": "7d267fe65ebe1548f3ca6f3699f6e58517883767ce7b921c567c43c11562b548",
+      "git_blob": "1283e71712f9bec24acfe638fb13ccf81259f239",
+      "physical_lines": 14,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/engines/tectonic.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/engines/tectonic.py",
+      "sha256": "a8648908daa27dfcfc4c6271b4b8926483ff1e0de6b0bb2f13c57e74621c3fb1",
+      "git_blob": "bbaa2c3853f3f81e48281c673dec8f1b5a1e84af",
+      "physical_lines": 370,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/handlers/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/handlers/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/handlers/environments.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/handlers/environments.py",
+      "sha256": "2e9128a0dc0f6bbd18fbf00824d7f81931be6a16de69801ce2d7777010d20c80",
+      "git_blob": "b9d72f0d01ceeb43242c4a175552630fdaf4f1ff",
+      "physical_lines": 381,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/handlers/macros.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/handlers/macros.py",
+      "sha256": "1e42b834313b126f5a21ddb12bb0a75ffd6ed20e808f8494e8faac2f02eca7a4",
+      "git_blob": "84f2af0b923cfd95b394eee300c42fcc9a3d83da",
+      "physical_lines": 701,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/handlers/math.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/handlers/math.py",
+      "sha256": "43f6e52f87b41efcea3ae3b59136ecc1288cc30bf36a89ac1300e29b29bf6996",
+      "git_blob": "5e0c76e741a88b29dfcca2f578701bba7f3d608a",
+      "physical_lines": 69,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/libraries/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/libraries/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/libraries/base.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/libraries/base.py",
+      "sha256": "d4c036b368455fc108a24e202fa524aacfa29264247d7c8dc3adf4dc57390b4f",
+      "git_blob": "c5bfc56f13e64ee758179652fb06484fa00e0268",
+      "physical_lines": 21,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/utils/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/utils/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/utils/encoding.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/utils/encoding.py",
+      "sha256": "4cb18f1537c3c3eedcc35f5ac55b3c3a4efcb2e390cff05981127db2d7af65f3",
+      "git_blob": "1d7bd392144d514fa98d6f6e0e3b68d47267c670",
+      "physical_lines": 43,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/utils/latex_context.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/utils/latex_context.py",
+      "sha256": "458b4e10c9883477709fe5bde8737f3b882a65804f8308d34e809c6428e4b382",
+      "git_blob": "ed244002d13086bba4f823218fbe177617508125",
+      "physical_lines": 34,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/utils/table.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/utils/table.py",
+      "sha256": "ac3c51e308917a74f0cb4ee73f87ec7c0c08c667898a3f9013f53bd52d84109e",
+      "git_blob": "ed23f64b871e145f7d80baa5e7b938ddc1e67a08",
+      "physical_lines": 240,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex/utils/text.py",
+      "copied_path": "components/docling-slim/docling/backend/latex/utils/text.py",
+      "sha256": "24352f58d2a3ba0b76db313cdd65db4d3c55770874ec30e6c53ae019b390bc6c",
+      "git_blob": "688561cb2aa4e59c70e6b304d20eab22f3fdf0ec",
+      "physical_lines": 221,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/latex_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/latex_backend.py",
+      "sha256": "bf10d482a09c0e249b49bfafb7acb7e856474322f1ceddeadc4fd898acee1cc9",
+      "git_blob": "ec48cbc9a97b41e4413d400dff8793d7b6084654",
+      "physical_lines": 6,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/managed_pdfium_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/managed_pdfium_backend.py",
+      "sha256": "a009e2e87c42c7bf1e225ca6d753bad4b1e5b1ffe998148719908ce46d4d6d54",
+      "git_blob": "7b95f8dbe17970c8bda893b2d8bb9c3aa27b8fc2",
+      "physical_lines": 58,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/md_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/md_backend.py",
+      "sha256": "8d73a2e0a8a9d4c97bfade20b4fd54e3d570939ddaa396a522da6f6b4ef2a2a3",
+      "git_blob": "6ad692d0d82c821afdf01e4593d876c53ecd6755",
+      "physical_lines": 1175,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/mets_gbs_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/mets_gbs_backend.py",
+      "sha256": "4a222025e3c2269da50c87066fbb62bd2a6a6fe2a18a07981257378d1e62600c",
+      "git_blob": "5b793b5e434734f9f53cb3c0f46a9a0e96a9a75c",
+      "physical_lines": 551,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/msexcel_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/msexcel_backend.py",
+      "sha256": "7f9fb351d4f82f0b10339394f702f472f069318b4a0e7c7118f595da323670fd",
+      "git_blob": "0743b6687b025c8b3f7ef5cc99420a7fcdfe09c5",
+      "physical_lines": 1985,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/mspowerpoint_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/mspowerpoint_backend.py",
+      "sha256": "8d8e2809ed5ea373f6a70c1a23065e109e61d87129eecadd46f2c86a2c1302e2",
+      "git_blob": "2d44c6716dacdcda5b591e0dfd6b916aa77c4f8d",
+      "physical_lines": 1816,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/msword_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/msword_backend.py",
+      "sha256": "9b6c7cbbd95812dfd42c4051456ae8a876259280fac6e1e0c59ae80f4ada9aa1",
+      "git_blob": "8501a866bb47ed1262be438b560be3198abeb89e",
+      "physical_lines": 4599,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/noop_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/noop_backend.py",
+      "sha256": "1a9ed6f57c71a4774b0d3de8660c6303723e2a1226efd64b7d74156d7ba86dd8",
+      "git_blob": "dd58fc114033286c00aa83c230f82aa4c57c91c7",
+      "physical_lines": 54,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/opendocument_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/opendocument_backend.py",
+      "sha256": "90a35b92cecf04f24e8fa5f115dae06c9715d9d09077aca59050ce37961e332f",
+      "git_blob": "877118a52fa2ca45bf3b6fcc0b588ba42d2ecfb4",
+      "physical_lines": 2194,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/pdf_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/pdf_backend.py",
+      "sha256": "357a285e27bcd5d163a0d59ab5483eaf0e3c90ec43d75e744d4f476e1dbd35d8",
+      "git_blob": "4a93f3e84e554df8dd9c49e2038b8816de1561ea",
+      "physical_lines": 199,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/pypdfium2_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/pypdfium2_backend.py",
+      "sha256": "3580a0c986e197797b28f718130307672b32a421913b558321270f411d965aa8",
+      "git_blob": "6ae6c61e63d32cba8d029d3fc48a0c46168a6387",
+      "physical_lines": 731,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/utils/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/utils/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/utils/image.py",
+      "copied_path": "components/docling-slim/docling/backend/utils/image.py",
+      "sha256": "8ba8b6a5f7cb9b5ec007b216daff04ced4438d0fb192537dc81d3008cacfdc71",
+      "git_blob": "6bacd34f58ecc5e57ba22688a420300294063c1f",
+      "physical_lines": 39,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/utils/image_resource_loader.py",
+      "copied_path": "components/docling-slim/docling/backend/utils/image_resource_loader.py",
+      "sha256": "734fe5b4550d77cecb6a574df057d9211dda9437f2d7d90608eb30dd09c1de1c",
+      "git_blob": "5d498761a94b06744c969a5c5bb16fd8ba46a24d",
+      "physical_lines": 482,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/utils/table_spans.py",
+      "copied_path": "components/docling-slim/docling/backend/utils/table_spans.py",
+      "sha256": "c274a919744ada57235b41b60dd58884c2547bd3a9b3569d1686ffe76bceb355",
+      "git_blob": "ff4b51ed0067ab8ec40360d2670fae908559aaa4",
+      "physical_lines": 71,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/webvtt_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/webvtt_backend.py",
+      "sha256": "a8edb14f1f13ce7bd85829064f8579eedb3f436b96bd3b6fbea5c58ac5abe279",
+      "git_blob": "2a0aa462f390dfd690839b575230357fad8f550c",
+      "physical_lines": 217,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/xml/__init__.py",
+      "copied_path": "components/docling-slim/docling/backend/xml/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/xml/doclang_archive_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/xml/doclang_archive_backend.py",
+      "sha256": "ef5ccfbc1405fe58c76d2ce1b461163c73fe66bb1b44a2c8dde0ea8e6caab08b",
+      "git_blob": "742c5255ec2d83d899f3964aadeb16e127470b57",
+      "physical_lines": 80,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/xml/doclang_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/xml/doclang_backend.py",
+      "sha256": "77607110d6924347eeb6fdd3702f9a4f1367396ff653e68d9a121f2e5ef18638",
+      "git_blob": "356c6a22544c0e1b11b51f7b3340243ea2e38625",
+      "physical_lines": 63,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/xml/jats_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/xml/jats_backend.py",
+      "sha256": "3b97677a45665867670e65099d91176bf8f6f9eeba2f0c0e9a9ce768b04a8ea1",
+      "git_blob": "2176b7fec0ac812f5cfb1098ce60d4b8637ee7cf",
+      "physical_lines": 1392,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/xml/uspto_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/xml/uspto_backend.py",
+      "sha256": "b8d9a9cf2a20f84bae7db114d156208d7d08cb5a29a2bb8443d1394df5ff6cf3",
+      "git_blob": "3e0cf07bfe046abe76bfa0855e1a556ae8c77061",
+      "physical_lines": 2040,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/backend/xml/xbrl_backend.py",
+      "copied_path": "components/docling-slim/docling/backend/xml/xbrl_backend.py",
+      "sha256": "5e0d03fa6d756ca6170a8062a6c8b4870b181dbaac0c6228d9e520f98298f6b8",
+      "git_blob": "2cb95802cceba90cd65cedac6ebd4ca8d4e15880",
+      "physical_lines": 489,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/chunking/__init__.py",
+      "copied_path": "components/docling-slim/docling/chunking/__init__.py",
+      "sha256": "707577e567bf330843f4310de5b93a2f7f0ebc50963453fe5794793eb6cf9490",
+      "git_blob": "305cc14b3b71ca15da9c2944e1772458e5f40bf1",
+      "physical_lines": 15,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/cli/__init__.py",
+      "copied_path": "components/docling-slim/docling/cli/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/cli/export_utils.py",
+      "copied_path": "components/docling-slim/docling/cli/export_utils.py",
+      "sha256": "3b8e805931aa08b1558d88654a6d89cccb6758aab79fa0203ab32174e8229805",
+      "git_blob": "c7d2539dd8a862fc8e928bdc9ead416f7ce2a907",
+      "physical_lines": 101,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/cli/main.py",
+      "copied_path": "components/docling-slim/docling/cli/main.py",
+      "sha256": "07409222d399c72a9f4350e2b9efb003bba1d210639226f9ba25e36de770f334",
+      "git_blob": "25291eb357ff2221c0ce6e25752551e2a1219258",
+      "physical_lines": 1854,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/cli/models.py",
+      "copied_path": "components/docling-slim/docling/cli/models.py",
+      "sha256": "ad1d2b4e0553a0b1f70fb5b018bc55a1b1a69a0ebd0e894935c65a550875ad66",
+      "git_blob": "e6b9fe889bdd6e52b6461c46d47b02decfc1804c",
+      "physical_lines": 333,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/cli/remote.py",
+      "copied_path": "components/docling-slim/docling/cli/remote.py",
+      "sha256": "e7da51665e6794faf246493ce69cbef0e2850e5e1b063f750cd08eebd4d235b5",
+      "git_blob": "aef469221e78209d8da111c01dd8aebede06055f",
+      "physical_lines": 444,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/cli/tools.py",
+      "copied_path": "components/docling-slim/docling/cli/tools.py",
+      "sha256": "3f290ec7bc0326ad633784567cafd1040a2e2bcf2e13fcf46026e879d0cb6b65",
+      "git_blob": "097e789c336c3993bedccafea21ac743a0cc8b91",
+      "physical_lines": 38,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/__init__.py",
+      "copied_path": "components/docling-slim/docling/datamodel/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/accelerator_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/accelerator_options.py",
+      "sha256": "efb8cfe6fda4aa65db661a462ab208bdca04fb5cedc06c69249248a986730311",
+      "git_blob": "a67a24491673cbf4b9f7ca7c8cafcfb2489ba85f",
+      "physical_lines": 113,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/asr_model_specs.py",
+      "copied_path": "components/docling-slim/docling/datamodel/asr_model_specs.py",
+      "sha256": "89ff17a26dc9ab02d65ab2c074f86130e162e69de93b3f56e3375bb00b3aacb2",
+      "git_blob": "5133ef7aa09e121fde4d8258884e23a80ab7562e",
+      "physical_lines": 748,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/backend_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/backend_options.py",
+      "sha256": "5403698cb4b909aef27cfdac18c1b2efc429b7da3f79f26088381c3870d541a0",
+      "git_blob": "61c386b554a77f800c77518ec28fc8dfb52f20d5",
+      "physical_lines": 832,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/base_models.py",
+      "copied_path": "components/docling-slim/docling/datamodel/base_models.py",
+      "sha256": "efa8bac18655bf8d51100c23a7d5fadf0e96416bf556050a3f49bf67c60196eb",
+      "git_blob": "e337a8502ef466a5a5771a05755732a77a0c1533",
+      "physical_lines": 772,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/chart_extraction_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/chart_extraction_options.py",
+      "sha256": "4f9c2cb3984d5fc43a68b9e22a3ddb84209c9602c4548f9cf706bf8b1373b464",
+      "git_blob": "ac7658fcec2f96f2711ffd13e3c2180d5d2e4c16",
+      "physical_lines": 285,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/document.py",
+      "copied_path": "components/docling-slim/docling/datamodel/document.py",
+      "sha256": "a17d7f8efdc9ba4971bdc99dae6e3638fe440b8c2f73f704fccfc3c6ed50d52b",
+      "git_blob": "91d44df515be94f3dbd344a2f8fe3a9713b78a43",
+      "physical_lines": 1241,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/extraction.py",
+      "copied_path": "components/docling-slim/docling/datamodel/extraction.py",
+      "sha256": "a1778f1cef07a38e05ad900b008e1b36a6620283bb70f4bf260585748b8549f0",
+      "git_blob": "1961d37a08ae51d6f3cfad8e6ac2f5557f8453fe",
+      "physical_lines": 42,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/extraction_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/extraction_options.py",
+      "sha256": "4cccf5b64e0cb3b6ccbd096e6852bbd9f2836a8bb829c9b2abe8988687c6dee1",
+      "git_blob": "32d90bf00b30902a33fd630fa49c771aed41d605",
+      "physical_lines": 9,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/image_classification_engine_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/image_classification_engine_options.py",
+      "sha256": "8e75514e8af634bf91bc54b47d9fcbdbbd95a319c4e4f63fd288bd555013d7ee",
+      "git_blob": "4f5f83f89a33d3bacbeed545486c22e93c8b90a1",
+      "physical_lines": 76,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/kserve_transport_utils.py",
+      "copied_path": "components/docling-slim/docling/datamodel/kserve_transport_utils.py",
+      "sha256": "680ab6a47af5969f4fb8286f610a2629201f48fb790d0e4b805c6aeb51ac4f2d",
+      "git_blob": "368fbfba2d7ac992c610742c39e0df3ce3b344c0",
+      "physical_lines": 17,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/kserve_v2_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/kserve_v2_options.py",
+      "sha256": "2e490f9d3399abfe2dc80050df18ebeff799a8646a7df4189454d3809198aff5",
+      "git_blob": "377aff05cbed403132761c9295f9f977839bad63",
+      "physical_lines": 127,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/layout_model_specs.py",
+      "copied_path": "components/docling-slim/docling/datamodel/layout_model_specs.py",
+      "sha256": "bb9fae0ea8d23e5a119717d7cf1c86a3bce0262b8a82051c041f30e806be0f54",
+      "git_blob": "0e0156e257546fc9d4a1191298d6fe4f33c354d0",
+      "physical_lines": 113,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/object_detection_engine_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/object_detection_engine_options.py",
+      "sha256": "f60363279eea297aad347090dea2d5181552d1966fe0ddb5cbb5086b939eff8f",
+      "git_blob": "1e4614c1ce487bf4b52358f69ffecd0d8fc05b5e",
+      "physical_lines": 78,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/picture_classification_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/picture_classification_options.py",
+      "sha256": "d4b8433732123e38e8223b993a442f11a88c5ebddf8f936222a94c3d76681bc1",
+      "git_blob": "8c2d4416d540903c429a874035ffc2a1359569d1",
+      "physical_lines": 60,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/pipeline_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/pipeline_options.py",
+      "sha256": "4bcf0c698f6c2f8153bbba55709c57ef9d9068f5576390b80fe6dcbb479af2a0",
+      "git_blob": "d3f52a7a6bdd52dc90ae2a647a93378c36483606",
+      "physical_lines": 2417,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/pipeline_options_asr_model.py",
+      "copied_path": "components/docling-slim/docling/datamodel/pipeline_options_asr_model.py",
+      "sha256": "1e04c06814ff10833c9c647ac8c66597d18bbd9da49732d1a30dc45b12cc7a98",
+      "git_blob": "4fc8f59c3ca31d54d48f540d2645656251587125",
+      "physical_lines": 449,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/pipeline_options_vlm_model.py",
+      "copied_path": "components/docling-slim/docling/datamodel/pipeline_options_vlm_model.py",
+      "sha256": "709d0260d73989cc30bf32449ee15d2da44ecb9ef950327c8b67924e765c9875",
+      "git_blob": "2001174d8adb48b1a1ef78134f14abb91832148c",
+      "physical_lines": 457,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/__init__.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/__init__.py",
+      "sha256": "03200f4bdf8bd07c8c35931505eceb5ab751532b7c7179b5d697740875deaab3",
+      "git_blob": "2c66997fd91cdb96801345c245f9107ccde77453",
+      "physical_lines": 199,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/callbacks.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/callbacks.py",
+      "sha256": "960ffd5c7d4a07bc60684daaa616edb8c1cdd9582549ce8dfd243b12b921e918",
+      "git_blob": "304ed860b8272dff93ba1b34a71f1b7c832425f0",
+      "physical_lines": 99,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/chunking.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/chunking.py",
+      "sha256": "b8e3760ba8cc199ec77820b6508a95f23984fa322ca7ef452cc3cf4466c4c422",
+      "git_blob": "5cb4150d1646417f53baf8c7a9b42b6be33c274b",
+      "physical_lines": 102,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/options.py",
+      "sha256": "e7d8df5e94c8e6c42abede315ab4ff876c4df86c19c6bb057f6d0fb2fa2aa936",
+      "git_blob": "081c155cd8b4e9ece832fdadba93aa9cb910c0de",
+      "physical_lines": 1199,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/requests.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/requests.py",
+      "sha256": "82540a07a3634fe629637956b7d439286906236415ab8ef09b146cd06e24f051",
+      "git_blob": "bb034bda45a35d61347dad2dd3ac8127f0b54a55",
+      "physical_lines": 273,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/responses.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/responses.py",
+      "sha256": "91c66d5c6eb3ed461d9c83bfd148a92257c20f83f08068b37f1ee146c4d70b8b",
+      "git_blob": "b144c3914d9b9e93720b3a8e972edb5fddf5e83a",
+      "physical_lines": 343,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/sources.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/sources.py",
+      "sha256": "c94f6a2f8bdab72500e9863d7f364f9e55f681982dd4b3e27498fe044d70a975",
+      "git_blob": "dcfc4cd050263c51d4040fbcd24b97ebbc6a89df",
+      "physical_lines": 419,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/targets.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/targets.py",
+      "sha256": "59fb6908fb80f4e94cf3286cf808382697beb1acc5a58129d277d5dafc40f2fd",
+      "git_blob": "21199ae40da495703e93ec37223fba8526ba7667",
+      "physical_lines": 59,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/service/tasks.py",
+      "copied_path": "components/docling-slim/docling/datamodel/service/tasks.py",
+      "sha256": "6927252026d9c927d24b7ad75a7fdeaf0932d74e16a0a33a7aec4e5f80cde22c",
+      "git_blob": "09941996207844da283d4d4a4f43632fa0381d24",
+      "physical_lines": 19,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/settings.py",
+      "copied_path": "components/docling-slim/docling/datamodel/settings.py",
+      "sha256": "3398ed8115d2b8aed857099c1651fd3dc01eb3b7e922d7b6ac2288ef13c2b2c4",
+      "git_blob": "39e25431ed0de50bca69412a7de989621038283b",
+      "physical_lines": 111,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/spatial.py",
+      "copied_path": "components/docling-slim/docling/datamodel/spatial.py",
+      "sha256": "5d5ba16b25c3e4daebe8d8de9344c95c94bb7d61b290db3fbfee8f5ae5cd4105",
+      "git_blob": "75d61966f614ca2dd601beb597acbc92c6f89be6",
+      "physical_lines": 55,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/stage_model_specs.py",
+      "copied_path": "components/docling-slim/docling/datamodel/stage_model_specs.py",
+      "sha256": "8b6a1513f9360e6b3e4b6e78c5b623908a4b4449f0d000f2fefd921e35607703",
+      "git_blob": "8439bd11426f733e2e762c50f75465dbe314f899",
+      "physical_lines": 2008,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/vlm_engine_options.py",
+      "copied_path": "components/docling-slim/docling/datamodel/vlm_engine_options.py",
+      "sha256": "cdfc94e14cd8dda77650dc7c6cb9be34a936a0027ca4e007ddd481124b3f9731",
+      "git_blob": "1aa9f1bd35de98fbcb54ee98ed8d5eacdbc9c53c",
+      "physical_lines": 247,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/vlm_model_specs.py",
+      "copied_path": "components/docling-slim/docling/datamodel/vlm_model_specs.py",
+      "sha256": "b214672e580a7fbdb9181422c7ed22e761d4ec3583a497f5f362355c13bad648",
+      "git_blob": "35bfac5f5d239691c677e761dbd46fb5339b255e",
+      "physical_lines": 589,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/datamodel/vlm_prompts.py",
+      "copied_path": "components/docling-slim/docling/datamodel/vlm_prompts.py",
+      "sha256": "b7ba12096bacab9c838d881119ca9d78e47d39a7d49ad8b90791d0b4d7033815",
+      "git_blob": "09218111543199c24723d987a566f494a421ef20",
+      "physical_lines": 74,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/document_converter.py",
+      "copied_path": "components/docling-slim/docling/document_converter.py",
+      "sha256": "ec1e8a054a93ab7e06a6b1ebf12279457722db76ffef0546b51c900ff0f73804",
+      "git_blob": "9f8bb6c6f65cf7e54e0f10a00e510d9de71ffb33",
+      "physical_lines": 913,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/document_extractor.py",
+      "copied_path": "components/docling-slim/docling/document_extractor.py",
+      "sha256": "8cafee5a5b667caf7b5002cf4527be97037255b2574a1e0f7e737271e97fdf5a",
+      "git_blob": "5176dee8f1f61ef779cf1b77adc205f99c62fa7b",
+      "physical_lines": 319,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/exceptions.py",
+      "copied_path": "components/docling-slim/docling/exceptions.py",
+      "sha256": "96f8f662bfe22e19d39ed39af8ed523a1e8af85361e768fc4c5233e8362984fc",
+      "git_blob": "7a93c5adb921b8399aee3c45d7e7c77fb86e7f5e",
+      "physical_lines": 94,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/__init__.py",
+      "copied_path": "components/docling-slim/docling/experimental/__init__.py",
+      "sha256": "c6d0be6fd5c7732e0272ab93eaf53c38e8b149eee6a6a2320118468a3d22b5d6",
+      "git_blob": "39deb9f8c2bbe852a479019b1a8aeb311cbf515d",
+      "physical_lines": 8,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/datamodel/__init__.py",
+      "copied_path": "components/docling-slim/docling/experimental/datamodel/__init__.py",
+      "sha256": "c4a96c935603ed9d7c515d89a2d8a705b5332da83c57e51f87610f3689b071ff",
+      "git_blob": "c4877bdc2e3aa964fffc3d14e36adcb9b49b20b1",
+      "physical_lines": 4,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/datamodel/table_crops_layout_options.py",
+      "copied_path": "components/docling-slim/docling/experimental/datamodel/table_crops_layout_options.py",
+      "sha256": "fb592bf6736d7156ed6b402dce2571dc32be77dcd8ac6fb1dfb0d9e5c3c93008",
+      "git_blob": "e3d0e8198a2877890576169104f443a60d07b437",
+      "physical_lines": 16,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/datamodel/threaded_layout_vlm_pipeline_options.py",
+      "copied_path": "components/docling-slim/docling/experimental/datamodel/threaded_layout_vlm_pipeline_options.py",
+      "sha256": "3c19141effeea8d3bb232f6937360c479e71f175302b0f045c6c34b840b105d4",
+      "git_blob": "923c55b12d675b2614c0e3d16d48779b4cd7e9c4",
+      "physical_lines": 53,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/models/__init__.py",
+      "copied_path": "components/docling-slim/docling/experimental/models/__init__.py",
+      "sha256": "ccc62fd62452eb2759f9a3101c926089f6d79c9981a4db05dd482444725723c1",
+      "git_blob": "03b97393d37c663e17202a1e31d0441b18cdbfe4",
+      "physical_lines": 6,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/models/table_crops_layout_model.py",
+      "copied_path": "components/docling-slim/docling/experimental/models/table_crops_layout_model.py",
+      "sha256": "4f97a1cdd7208cae071860ea30ebeb4dd224062b7bb0dd0eac4ed49fa9d7015c",
+      "git_blob": "823cfba021ac3db928e3db76fad78084287a27b1",
+      "physical_lines": 99,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/pipeline/__init__.py",
+      "copied_path": "components/docling-slim/docling/experimental/pipeline/__init__.py",
+      "sha256": "c05a87910f708ab9f51c939de3a89ae5903c3ed42c74f26c8010092d399c28e5",
+      "git_blob": "6987c2a39e3f3226a875d47ed0a7874b2341ec7c",
+      "physical_lines": 4,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/experimental/pipeline/threaded_layout_vlm_pipeline.py",
+      "copied_path": "components/docling-slim/docling/experimental/pipeline/threaded_layout_vlm_pipeline.py",
+      "sha256": "a8ec242410d95fc50946b7e5f6b88b9a46add577734e943a993180634f9a8c5d",
+      "git_blob": "90c16d0d363ac2e4821a6a7b8044465e8e5972e8",
+      "physical_lines": 506,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/base_layout_model.py",
+      "copied_path": "components/docling-slim/docling/models/base_layout_model.py",
+      "sha256": "34f638f686c79f36beceffbc98cbaf4962082523c3466681670717a04c07f21a",
+      "git_blob": "1ccdcc687f63f356020e46a4fa00b39be97c6e1a",
+      "physical_lines": 66,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/base_layout_postprocessing_model.py",
+      "copied_path": "components/docling-slim/docling/models/base_layout_postprocessing_model.py",
+      "sha256": "16e5e93a843ea881269652617be4ca5d8c62401ceb02f40a3f1ce10e3cee79a3",
+      "git_blob": "b54b31aaab62e76d8f2e84de7dc7168f21439380",
+      "physical_lines": 42,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/base_model.py",
+      "copied_path": "components/docling-slim/docling/models/base_model.py",
+      "sha256": "18aa919026f8327bac4fa3905729c26adfab1a72b86a4a3a730ffef4949aebd3",
+      "git_blob": "0f58773928c26b47e8af40fa3b5ebfcc14b5cb4b",
+      "physical_lines": 221,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/base_ocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/base_ocr_model.py",
+      "sha256": "1f4ae0b01827538a37a4abd02534b783325a063144ceca6447cd4966c38ecb0c",
+      "git_blob": "6d1ba4c854d5e7aba6b5b954ca3345698cb06426",
+      "physical_lines": 613,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/base_table_model.py",
+      "copied_path": "components/docling-slim/docling/models/base_table_model.py",
+      "sha256": "87209a820941a2beed42fa3e18ab1583a64a4c286af6fe8559c4aa6ba0aca74d",
+      "git_blob": "0844d27a320df9967de8ea3aabfe3af7c217b78a",
+      "physical_lines": 48,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/extraction/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/extraction/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/extraction/nuextract_transformers_model.py",
+      "copied_path": "components/docling-slim/docling/models/extraction/nuextract_transformers_model.py",
+      "sha256": "7fa47d1ec0d36b82f13e44e16e69fc0d778c21ae8bf285655f8486fdfa2d18eb",
+      "git_blob": "6e4457467d0859129bb77afdba0636315248dbd6",
+      "physical_lines": 313,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/extraction/prompt_utils.py",
+      "copied_path": "components/docling-slim/docling/models/extraction/prompt_utils.py",
+      "sha256": "602ecbe8760f65d8856ad108c5e2d24c203298c46253acb963b325e4300a08d0",
+      "git_blob": "7dedba097c0d77c464f8e8d91fe030b2383abe0c",
+      "physical_lines": 163,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/extraction/transformers_extraction_model.py",
+      "copied_path": "components/docling-slim/docling/models/extraction/transformers_extraction_model.py",
+      "sha256": "29365dec27b8732e62ea590740b4ce38c34a9cf46bd213af99c496013a639dcb",
+      "git_blob": "2ef5a5817ac469b78b710ec33fc8076d15bc9665",
+      "physical_lines": 235,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/factories/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/factories/__init__.py",
+      "sha256": "3919f31c2ab19444a7521dfadab0ea377385f0675fe37d5116241e3cb60a5055",
+      "git_blob": "9d135e260291f595272e40ac2760c81dc33f5149",
+      "physical_lines": 50,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/factories/base_factory.py",
+      "copied_path": "components/docling-slim/docling/models/factories/base_factory.py",
+      "sha256": "481dd7aa3dee6bba62afc43f16e36a80cbddd79eaed0a012590021dd30456193",
+      "git_blob": "109d28304488d31eb5a267b099a9313f63f8546b",
+      "physical_lines": 134,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/factories/layout_factory.py",
+      "copied_path": "components/docling-slim/docling/models/factories/layout_factory.py",
+      "sha256": "8c92a0c700c3a2070a3fc3d5f93863a28c71257ef9163753555e1c206ec4f67f",
+      "git_blob": "dca9556cb9b5f68b94a7b91b1f581ef6d4796ba7",
+      "physical_lines": 10,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/factories/ocr_factory.py",
+      "copied_path": "components/docling-slim/docling/models/factories/ocr_factory.py",
+      "sha256": "a3de7cac5b308fbccbf5c1a53c27317bbc60af50237441187ccbfaaedcc4ecf0",
+      "git_blob": "4447c964543b76fb4849a5fee0355a282f3a11d5",
+      "physical_lines": 14,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/factories/picture_description_factory.py",
+      "copied_path": "components/docling-slim/docling/models/factories/picture_description_factory.py",
+      "sha256": "43428236f04768fc5bac9b5f51c91dfed40234cbeee418f1e71f4041d0c070f7",
+      "git_blob": "d95b950ea811dfc2ae524d60e933d7b72c20d35d",
+      "physical_lines": 14,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/factories/table_factory.py",
+      "copied_path": "components/docling-slim/docling/models/factories/table_factory.py",
+      "sha256": "1bdd25d6b1caa77f55de55df564b550ac231b4a2c6f279fbb8014e5339bcbffc",
+      "git_blob": "8060a56d7abf2c9eb75c00b58f5de63751ebe790",
+      "physical_lines": 10,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/__init__.py",
+      "sha256": "e2cbd6b636404cd34571b284a00739627d78091a7a1015a5ae983b3b3de7a441",
+      "git_blob": "a5db9034456118debbf2490095c584e40edb25de",
+      "physical_lines": 16,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/common/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/common/__init__.py",
+      "sha256": "d47fc2dfae6f8c054eee69c22f1ea4e213f2690eadd7c856023971301c4ffad2",
+      "git_blob": "e1fbd09d5ced90ec6563ffae2d980d23b68d7c43",
+      "physical_lines": 10,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/common/hf_vision_base.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/common/hf_vision_base.py",
+      "sha256": "75232e9111c8b85c3bbee8d92798308318eaf803f9cb96e5c245f61aad352b1b",
+      "git_blob": "9cca646b2cbde6d2036d2886b8eea4602232bb4d",
+      "physical_lines": 159,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/common/kserve_v2_client_base.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/common/kserve_v2_client_base.py",
+      "sha256": "5fe4c48aeb1d4b7609a943209b4ea5db8fd5cad97b01ef983549025a50ac5e4c",
+      "git_blob": "69ba3fdde4ae381f384d29417bf0f2ea8d25cba7",
+      "physical_lines": 33,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/common/kserve_v2_grpc.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/common/kserve_v2_grpc.py",
+      "sha256": "2338f6c2c82296c201eab0afa9889b3c620b3d9567f5b083ecd09148f786250a",
+      "git_blob": "fefe50cc8753ad257f36a918357fc1e33e0cc56b",
+      "physical_lines": 415,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/common/kserve_v2_http.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/common/kserve_v2_http.py",
+      "sha256": "acef35ec4d301cdf6a7829185096c7a1884e2a06cdbcd147a7fc5d65b70c6807",
+      "git_blob": "a91c8eed00477f852215ae45e801e19c2665735e",
+      "physical_lines": 448,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/common/kserve_v2_types.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/common/kserve_v2_types.py",
+      "sha256": "9a02bd6a07f4d9d24d84f1739f535c931b0bf1b6b6bcf5cbc8c4dbb9c625e0e5",
+      "git_blob": "cce404c5cfde2ed66eb8be71598ecd57dcbbe569",
+      "physical_lines": 52,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/common/kserve_v2_utils.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/common/kserve_v2_utils.py",
+      "sha256": "b83f66a4a3448fc281a9f60e04474cf18607e00135d90353af651887657d7b12",
+      "git_blob": "b42df350ef07c67a0d3022fb8be138c89677e475",
+      "physical_lines": 50,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/image_classification/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/image_classification/__init__.py",
+      "sha256": "abb53668451b25cb3d93789483f8187bc620c1ee0b3b980f6d46d26e84a31676",
+      "git_blob": "d54e187c7ec0bf482110a82974c8d9da8b1c811a",
+      "physical_lines": 24,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/image_classification/api_kserve_v2_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/image_classification/api_kserve_v2_engine.py",
+      "sha256": "fbd7e6021efd1d610400e8cc6758a9152c80012c6308e5e8edb051382cc819a5",
+      "git_blob": "26767b39d7422eb522dc080ff76656808d1c084a",
+      "physical_lines": 199,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/image_classification/base.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/image_classification/base.py",
+      "sha256": "a509739ef2edeb97a539f87920c24a3bdeb710179981ea4575a5e456eecb20b0",
+      "git_blob": "929766acf2e7fee30951b3e971eb8d521dab4507",
+      "physical_lines": 199,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/image_classification/factory.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/image_classification/factory.py",
+      "sha256": "970b98aa0c335c39dcdfd962d82a3cf9989cafb5729c5632cb3316a8703efd70",
+      "git_blob": "ba7eb1a4b97eefdf218332be9c6660c2eec9bf1c",
+      "physical_lines": 102,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/image_classification/hf_base.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/image_classification/hf_base.py",
+      "sha256": "0814c0b33fc4bf4491c75cdc62b6389edab2138163680aca3ac5626034266fc0",
+      "git_blob": "50fee6b0d13e39b5cbcaa482d6fbdb5a4c005dda",
+      "physical_lines": 107,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/image_classification/onnxruntime_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/image_classification/onnxruntime_engine.py",
+      "sha256": "305f30bb9c171fdb7dbd8c3d4a5e74833512a5ba1f0e84f7da57217342c4052a",
+      "git_blob": "c9cd9f7bd217a15a281ea04501bb11323b17c7b7",
+      "physical_lines": 198,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/image_classification/transformers_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/image_classification/transformers_engine.py",
+      "sha256": "4e96114de958072ea7598eea08368911e1e91e0a9741b448f49ea98fd125fb1f",
+      "git_blob": "f473a52b3115fd44f0252912ed10aabebd9af555",
+      "physical_lines": 209,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/object_detection/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/object_detection/__init__.py",
+      "sha256": "b94b7ec010e03aff809b7903f3fabd53026ce70e95eac9aa4a8e6fd22503f228",
+      "git_blob": "cf608f9ca6070939b3198d896653da26411e93d2",
+      "physical_lines": 24,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/object_detection/api_kserve_v2_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/object_detection/api_kserve_v2_engine.py",
+      "sha256": "5fd557b2ba5df16e764aa6a48ffde55acc1168397d96534980faf166a061db9c",
+      "git_blob": "4435a8d0095d0c8d7b1ed08d22ab13d2d26a110f",
+      "physical_lines": 260,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/object_detection/base.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/object_detection/base.py",
+      "sha256": "62fea17eb6f95249f9c597655ce318a13dc130d5f0d6e10afd20636dbd1966cc",
+      "git_blob": "9771f5881c0c2521445bc3a191dbacc08e77185a",
+      "physical_lines": 218,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/object_detection/factory.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/object_detection/factory.py",
+      "sha256": "f737787d414dbd051ee4433400f5b45707247c60608084acd5f43b155d5385d4",
+      "git_blob": "f5114d7c0aca626bdd0f904a3b0742b63f1b104f",
+      "physical_lines": 114,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/object_detection/hf_base.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/object_detection/hf_base.py",
+      "sha256": "e2697fd22768bdd5e4b6060da98a1f3cbb08b98eff441e744124cec48af6a0b8",
+      "git_blob": "02d3b3fe9fa698415a99bbbeca946171c4d730bb",
+      "physical_lines": 72,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/object_detection/onnxruntime_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/object_detection/onnxruntime_engine.py",
+      "sha256": "061dc7e630628189f76a26d9c5b4ddaf5e852c38489fef2c736e49f726b1b9cc",
+      "git_blob": "db1ae65df6d7ab881109dcb3b05eb6feaf9cf64c",
+      "physical_lines": 214,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/object_detection/transformers_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/object_detection/transformers_engine.py",
+      "sha256": "45657f55af202359d0fa662aa0cdba618cf32c9888cc215596f921bc12e71708",
+      "git_blob": "c5135b4e3fa7386ed19d651e1e3b066824eaec5f",
+      "physical_lines": 252,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/__init__.py",
+      "sha256": "04e1af9684b50daeb4ade2efb2b4b7c90fde119fe96712aad0a848db701abca0",
+      "git_blob": "581b13332146f35fa7522c25afeadc38a65fbfb6",
+      "physical_lines": 35,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/_utils.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/_utils.py",
+      "sha256": "2759a438b0c4cc6ec0d307c610e1f98210bd28fb82d5ef25eefc14c6d54e1739",
+      "git_blob": "31eab2d29224867ae9fe740d632975fe38d015de",
+      "physical_lines": 281,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/api_openai_compatible_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/api_openai_compatible_engine.py",
+      "sha256": "553be64581145916469ef62ddd4c4cbffa19788bfe94cd448fd388295c3e7113",
+      "git_blob": "29170930f0119b4fb42bc1883894d9185c89a2b9",
+      "physical_lines": 244,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/auto_inline_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/auto_inline_engine.py",
+      "sha256": "3e2542491aaed9d5cbb0fb603e2614e50bb560368df7358d0e6d12e9dafada29",
+      "git_blob": "caafdb6a26faaea9b24b5774d681bd8e70c22ab7",
+      "physical_lines": 271,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/base.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/base.py",
+      "sha256": "17333be8a6a511e4a292a807bcd603a340250f5d09097e96b9e6d06dce93fa56",
+      "git_blob": "68a66ee297e721fa30019594d0e4ac53aa8e0cbe",
+      "physical_lines": 277,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/factory.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/factory.py",
+      "sha256": "45a7dd696a83f8f45ac46a48042d758aac4a5fe6ae697c070727a1a68db4e26f",
+      "git_blob": "ea0dc71be3fd568db33eb80a540de03a97add6c0",
+      "physical_lines": 136,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/mlx_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/mlx_engine.py",
+      "sha256": "9a76c6c47e15a31729f29a8e8b6e20bea2187ea8291226d2452ef2d96735fb23",
+      "git_blob": "9c80eb2ae3effc0855b2ef7275bd67093a830a0e",
+      "physical_lines": 362,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/transformers_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/transformers_engine.py",
+      "sha256": "ebe37aa820f9221cab1b5e7251200592444d578cd8f43d559c4d108996ebe223",
+      "git_blob": "0227e3e57a1c07ab079269ffbd93b5dbd3de6711",
+      "physical_lines": 592,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/inference_engines/vlm/vllm_engine.py",
+      "copied_path": "components/docling-slim/docling/models/inference_engines/vlm/vllm_engine.py",
+      "sha256": "65ce02ab09d331a600b666df679861d714d2be8c9816ff9b96419ac93f499d94",
+      "git_blob": "016db6ffffc6226c0ebd926e7fbf107b6bb3182a",
+      "physical_lines": 388,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/picture_description_base_model.py",
+      "copied_path": "components/docling-slim/docling/models/picture_description_base_model.py",
+      "sha256": "97d33faf8de6c93aaf5c92040b281c895371ed2acb2a970b001f5616e86ddbc5",
+      "git_blob": "033f39aa9105a6bc3fc794bdb92742d13e1560e2",
+      "physical_lines": 183,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/plugins/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/plugins/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/plugins/defaults.py",
+      "copied_path": "components/docling-slim/docling/models/plugins/defaults.py",
+      "sha256": "abdb8781b0c95e1bbf3589a548e8a1d591b761878f5bce8a51396dada70aed83",
+      "git_blob": "a6e6d48bf11c8cafb0a9fea930c94e668c640685",
+      "physical_lines": 84,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/postprocessing/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/postprocessing/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/postprocessing/list_marker_processor.py",
+      "copied_path": "components/docling-slim/docling/models/postprocessing/list_marker_processor.py",
+      "sha256": "2c3e463d34e73aaa55dce4e4f61f4c72a4bb4b1eb54fc16f4ec83289211826d5",
+      "git_blob": "14302005c3943128a522ef06d77b6f9f51f5ff36",
+      "physical_lines": 370,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/postprocessing/reading_order_rb.py",
+      "copied_path": "components/docling-slim/docling/models/postprocessing/reading_order_rb.py",
+      "sha256": "db55a4148d39536a7840bdb1b815f0409e22b0d82066683206dd93b9b452e1f5",
+      "git_blob": "e45e1f87737763a24a0c8755f88206df82e35377",
+      "physical_lines": 1247,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/chart_extraction/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/chart_extraction/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/chart_extraction/granite_vision.py",
+      "copied_path": "components/docling-slim/docling/models/stages/chart_extraction/granite_vision.py",
+      "sha256": "5a6a607569f47b6662ea36c6e14c30725ebfb50073f7a53d4061e5b3a8fc39db",
+      "git_blob": "f6bcf49639b726bc3fa75ea906c6c635963a944b",
+      "physical_lines": 392,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/code_formula/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/code_formula/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/code_formula/code_formula_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/code_formula/code_formula_model.py",
+      "sha256": "64fddbedc5d09a6a81a0329b2d2c135554b74bf646bfe053866c395befc0238a",
+      "git_blob": "b9d5779fc6d28c404ed8b401f825db619dd7911c",
+      "physical_lines": 347,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/code_formula/code_formula_vlm_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/code_formula/code_formula_vlm_model.py",
+      "sha256": "8d0dababfdd0dd53c0b7a29d9d2fa36369429f7153387fce28b5822b8ac9ed19",
+      "git_blob": "176287b5158dd427e45b463bcc4e2ed487a07c2b",
+      "physical_lines": 322,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/heading_hierarchy/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/heading_hierarchy/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/heading_hierarchy/heading_hierarchy_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/heading_hierarchy/heading_hierarchy_model.py",
+      "sha256": "fc55f4b281138f5f43da04f7b55ac854b1a4316fb4b82e3830b0a114742d4b4e",
+      "git_blob": "bfff966c2f3391623e6761481651470f16d78c53",
+      "physical_lines": 597,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/layout/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/layout/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/layout/layout_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/layout/layout_model.py",
+      "sha256": "5d11b9f3b00eeb8e2334ef96845a22a28ead37470a2354ac09602e396012d057",
+      "git_blob": "ff6beb9183ec1e96e93095db1ad3797c5ce46778",
+      "physical_lines": 86,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/layout/layout_object_detection_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/layout/layout_object_detection_model.py",
+      "sha256": "e724cb26c44c9f8fbe7bf42f3562889f7dbc432882146b04ef436fbf22bfa07e",
+      "git_blob": "9a8a3b5e6842989f449f6d5b64dca44a89c02648",
+      "physical_lines": 189,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/layout/layout_postprocessing_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/layout/layout_postprocessing_model.py",
+      "sha256": "59318ee44c5ea4873677a052607488df0794b4b3caf3c31f675341377486eff9",
+      "git_blob": "63ac2c75896ef94ba90e0fced4fdc5bf2abf3e8e",
+      "physical_lines": 94,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/_nemotron_ocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/_nemotron_ocr_model.py",
+      "sha256": "d696699084b510515b959d4e05652be95b91cfe7aa8b61c940e5b43736b11c74",
+      "git_blob": "28001bf15b8dc3b6a18fac39eeabd5c68bd087b5",
+      "physical_lines": 440,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/auto_ocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/auto_ocr_model.py",
+      "sha256": "dca5063757a17e3eb8cef04abab31cf15660d66764c0aa358f354955e39afc4e",
+      "git_blob": "3ff1151f5c713524d3f92f42b81983326d08cce6",
+      "physical_lines": 229,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/easyocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/easyocr_model.py",
+      "sha256": "709d3f87db0a8a00ece3c224a7c074e7086bc9111f50b83f5d62f4e658337b2d",
+      "git_blob": "82c5419b008d1cffda65f93be0d8af8b01c81c8d",
+      "physical_lines": 379,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/kserve_v2_ocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/kserve_v2_ocr_model.py",
+      "sha256": "0896ba835802cf8a802066c26eb5c80f046048946bfed5857a4d03f22b261387",
+      "git_blob": "cb18e557172c9ed8cd6f8dd7699c5836f0852cb2",
+      "physical_lines": 332,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/nemotron_ocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/nemotron_ocr_model.py",
+      "sha256": "5a8171a63f1a8e5e2a8b5e6ec04adf1be4088a30ed8431631163826c37720e38",
+      "git_blob": "51f57721b22a551a6f5222482cebc7cd4c8042da",
+      "physical_lines": 471,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/ocr_mac_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/ocr_mac_model.py",
+      "sha256": "604d82aa4935d3fa8c52ec06d794f6b13790a42382e7761471f0c5f8d1e956ec",
+      "git_blob": "36769e7ce987335937fda6f060dfca7a40eebcfa",
+      "physical_lines": 239,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/rapid_ocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/rapid_ocr_model.py",
+      "sha256": "0d02c844bb4d81175d137958574cb02708cab1cecddb49c48064fe536d00f3c3",
+      "git_blob": "a8ada949301a8daa23d1362072b8812b8cced902",
+      "physical_lines": 823,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/tesseract_ocr_cli_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/tesseract_ocr_cli_model.py",
+      "sha256": "c17e116381e978c581f92ef70353995e794d5e64398e07cc7dba3fd9ba2ddc17",
+      "git_blob": "2ea2c78137168b08318df51d21667cda6d8791b9",
+      "physical_lines": 445,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/tesseract_ocr_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/tesseract_ocr_model.py",
+      "sha256": "db355ef56806905e8c5b08270c432f5ad715699d5ad7819838de943390f698e6",
+      "git_blob": "19e0ea2d3c3c5aeb39a411a06f5685331ff0c4fa",
+      "physical_lines": 304,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/ocr/tesseract_utils.py",
+      "copied_path": "components/docling-slim/docling/models/stages/ocr/tesseract_utils.py",
+      "sha256": "a249c3aa11d43a58422f0989aa3ec4ac570efd5258574f37e95ae4a650f59a02",
+      "git_blob": "447a0e2d61f5fab81cb1f4e302d6864ff6903c1c",
+      "physical_lines": 168,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/page_assemble/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/page_assemble/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/page_assemble/page_assemble_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/page_assemble/page_assemble_model.py",
+      "sha256": "464799876dd35a1fb841a996accddc14c9afdb0fa58b3e5ca08dbc119a130400",
+      "git_blob": "a7bd223f637f9907df13a8346ede8a57eddce16c",
+      "physical_lines": 271,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/page_preprocessing/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/page_preprocessing/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/page_preprocessing/page_preprocessing_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/page_preprocessing/page_preprocessing_model.py",
+      "sha256": "8533884524a83cde50547b50b07376d9e3536cc58b1e1109ce6948d7e61c2d5f",
+      "git_blob": "26a188fb7e93166f90f9871dd5d5633d1993267d",
+      "physical_lines": 204,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/picture_classifier/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/picture_classifier/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/picture_classifier/document_picture_classifier.py",
+      "copied_path": "components/docling-slim/docling/models/stages/picture_classifier/document_picture_classifier.py",
+      "sha256": "abcfc43360a60f398e6222323483961c551864eef2ea13a562120e8dd9fb19ce",
+      "git_blob": "9e17d3a9b5929f2635c4457e98ab82e1a58f3fb7",
+      "physical_lines": 213,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/picture_description/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/picture_description/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/picture_description/picture_description_api_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/picture_description/picture_description_api_model.py",
+      "sha256": "3c23b53c563aec3005d529c12161f307085573ec4267592def17ee1429dbcb69",
+      "git_blob": "6d9c736535e164a23b7625932753f0d8c5a89d62",
+      "physical_lines": 71,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/picture_description/picture_description_vlm_engine_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/picture_description/picture_description_vlm_engine_model.py",
+      "sha256": "3e572a3453880da08f185e4e3fcdf03fd5e3c0185665cebae0cac67d91398fbe",
+      "git_blob": "2de16a721c6efbe1b4f675c64c274e8ca5d518fd",
+      "physical_lines": 235,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/picture_description/picture_description_vlm_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/picture_description/picture_description_vlm_model.py",
+      "sha256": "e914a80409cc910bef948ecf61ce29c283c7fcbad3662e3c113507a4c7db49bc",
+      "git_blob": "7c4c8947b0f9773fd7eea97ca4c9332a2a586c09",
+      "physical_lines": 142,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/reading_order/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/reading_order/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/reading_order/readingorder_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/reading_order/readingorder_model.py",
+      "sha256": "7fca755080095cfc63991af1b96ae041d477c8f762c9ea9e0a2e621eff7d74ae",
+      "git_blob": "28909aab703a9a61a3cf0c2076997f978c90a2fa",
+      "physical_lines": 789,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/table_structure/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/table_structure/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/table_structure/table_structure_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/table_structure/table_structure_model.py",
+      "sha256": "184a68adba5b7230713e1d58fdfba38f7e5bf6e4b7a2a50866efe9bf9942cf86",
+      "git_blob": "4957777f217430b12dadcacb329ca1757f0522fc",
+      "physical_lines": 417,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/table_structure/table_structure_model_granite_vision.py",
+      "copied_path": "components/docling-slim/docling/models/stages/table_structure/table_structure_model_granite_vision.py",
+      "sha256": "3f53ac23251f9a970dde69444ebe548ade296a7eb7e00f4d41d11707ba9bd5d2",
+      "git_blob": "f49a39d8927b48fae1a0a6ac1f8a6d2a7aada741",
+      "physical_lines": 238,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/table_structure/table_structure_model_v2.py",
+      "copied_path": "components/docling-slim/docling/models/stages/table_structure/table_structure_model_v2.py",
+      "sha256": "906dc6662e9500bb53594182dc29ef9b385f15aaeee5e711734d098dfd157797",
+      "git_blob": "9553a5f2ed6bed81ba5d959855752603d269ae0d",
+      "physical_lines": 540,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/vlm_convert/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/stages/vlm_convert/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/stages/vlm_convert/vlm_convert_model.py",
+      "copied_path": "components/docling-slim/docling/models/stages/vlm_convert/vlm_convert_model.py",
+      "sha256": "0faafceeb7c866c0945084db0944743a64782b96684990defe8a6b9bcf32c609",
+      "git_blob": "2547608e6b15f1cbd4bd19b76ca12d5dc3981e89",
+      "physical_lines": 405,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/utils/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/utils/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/utils/generation_utils.py",
+      "copied_path": "components/docling-slim/docling/models/utils/generation_utils.py",
+      "sha256": "299ba988e420bf41301be1033881ec3cd4f08d243cfc6643391e9d5a101271a4",
+      "git_blob": "0a30e330848af2c5accadedd81bf46c686d9a67a",
+      "physical_lines": 260,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/utils/hf_model_download.py",
+      "copied_path": "components/docling-slim/docling/models/utils/hf_model_download.py",
+      "sha256": "a88a50f814169d01ead6e242cce32884f309f44a5d9738935e94c7b396d3fffe",
+      "git_blob": "fecf50bdfba733e42ebc2bde7958fa061c78d79d",
+      "physical_lines": 67,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/utils/hf_stopping_criteria.py",
+      "copied_path": "components/docling-slim/docling/models/utils/hf_stopping_criteria.py",
+      "sha256": "8b0911fb76cb4d7ddbc30ec32bd7525a14b2b3996a25f50b1be84a3de8b103a7",
+      "git_blob": "18eefceb8272160ef30cd20d2b67092960e72027",
+      "physical_lines": 62,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/vlm_pipeline_models/__init__.py",
+      "copied_path": "components/docling-slim/docling/models/vlm_pipeline_models/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/vlm_pipeline_models/api_vlm_model.py",
+      "copied_path": "components/docling-slim/docling/models/vlm_pipeline_models/api_vlm_model.py",
+      "sha256": "5d52b49669a6ef55f0f73247321d983aa1dc9dd44f72c6eca0058595bd396f29",
+      "git_blob": "a63bd57f9c230c24da91957ded7c0dacb0509c31",
+      "physical_lines": 192,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/vlm_pipeline_models/hf_transformers_model.py",
+      "copied_path": "components/docling-slim/docling/models/vlm_pipeline_models/hf_transformers_model.py",
+      "sha256": "06b6c0f81e7fc8ca090d5bbef00ecf138c76c8fe5bdeddbedb08870544a5f8a0",
+      "git_blob": "94dbb358e7831611e3c53ead0843ed948653852e",
+      "physical_lines": 451,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/vlm_pipeline_models/mlx_model.py",
+      "copied_path": "components/docling-slim/docling/models/vlm_pipeline_models/mlx_model.py",
+      "sha256": "ac9e679678468cc5ee68f7fae6b09c9a5e0b1cff810c9d8149c5844b965dc768",
+      "git_blob": "9ec3f9b0d9863edf84d80dc037e9bd98ce59bc65",
+      "physical_lines": 347,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/models/vlm_pipeline_models/vllm_model.py",
+      "copied_path": "components/docling-slim/docling/models/vlm_pipeline_models/vllm_model.py",
+      "sha256": "5258e9b1907d8658eb8f9adee6a63e29ea293fd61d6c894be3a7d0bc62eae20c",
+      "git_blob": "c9d6aedc281dd30ea3f9ea9372a655e993f652cf",
+      "physical_lines": 365,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/__init__.py",
+      "copied_path": "components/docling-slim/docling/pipeline/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/asr_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/asr_pipeline.py",
+      "sha256": "ab361394813188df61a3d85bcb9991f8a3a6386461f162044fb230e44d73b17f",
+      "git_blob": "737421cdcbb32d985b6a6215db6acb2d296bb6d4",
+      "physical_lines": 76,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/asr_transcriber.py",
+      "copied_path": "components/docling-slim/docling/pipeline/asr_transcriber.py",
+      "sha256": "5e411bf5a2159315f7ddd684eb4ce7efab643331f85c53e966b640a218aee440",
+      "git_blob": "d4d7f160da62fb4c09f29a0b676ec2ba7f9bca16",
+      "physical_lines": 810,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/base_extraction_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/base_extraction_pipeline.py",
+      "sha256": "f8ce1ff0e23392043f6afc2d1e329ea6853f253688ddc75c2bb89493605cd642",
+      "git_blob": "417c169aa8e6f82f5064c017324e1d259bbc099a",
+      "physical_lines": 81,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/base_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/base_pipeline.py",
+      "sha256": "baf37b950fa5b111e625d8e6aa1fb52cefc6f95d018c09ad82050d0999add368",
+      "git_blob": "186ead3c7f615c31b3a8c88766d74cb1e2894f0a",
+      "physical_lines": 427,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/extraction_vlm_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/extraction_vlm_pipeline.py",
+      "sha256": "9300069d31654e4a0701574ac8a3ca9e9321abfac5571dbb02882c62ea8bd4ae",
+      "git_blob": "7d204cca6be0a9f37a491dc32fe3743561f1c220",
+      "physical_lines": 236,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/legacy_standard_pdf_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/legacy_standard_pdf_pipeline.py",
+      "sha256": "6a4a7ed202f9cff5ea88816d8c0a36ce9dd92d6d068931b6e78cea1a6a5c9081",
+      "git_blob": "20ef06a86eaf174c0e98a88f4f3367c5d004f100",
+      "physical_lines": 17,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/native_pdf_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/native_pdf_pipeline.py",
+      "sha256": "ad7480efdafa0a658df42af9184a9473e796bcc2f7eae57af3364ec33dd44579",
+      "git_blob": "3059c4b80471c679cf8ed95a101b202950f800a1",
+      "physical_lines": 434,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/simple_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/simple_pipeline.py",
+      "sha256": "90dcc4d524985c27c21611cc088be9164747724b4c7f39c03ef0afa62c1d564b",
+      "git_blob": "0e0c8f7a0702dbc2a9675409b77f48b467ec3bfe",
+      "physical_lines": 58,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/standard_pdf_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/standard_pdf_pipeline.py",
+      "sha256": "817cb4b5a0801553eeb66fc2d97e52a8a80728c5f173d973c8298d7d36e1defe",
+      "git_blob": "cdc56bfc682dbd0d3fea8cd8b227af577719721d",
+      "physical_lines": 1202,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/threaded_standard_pdf_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/threaded_standard_pdf_pipeline.py",
+      "sha256": "1850ffba518ac7e80d67cbbc3c48bcaf16fa25a40187c601726faf4f4440db55",
+      "git_blob": "cef9385f3d032695859a6eb0b21499056af3019f",
+      "physical_lines": 8,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/video_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/video_pipeline.py",
+      "sha256": "d17ef42fafe6a7a5c6fd0baf39c817ba58191759b470f47ad28dda59d87205db",
+      "git_blob": "69a3d99725261eb42a4827fedccbde4b24bc4aff",
+      "physical_lines": 356,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/pipeline/vlm_pipeline.py",
+      "copied_path": "components/docling-slim/docling/pipeline/vlm_pipeline.py",
+      "sha256": "681efd64e784865b7a8b0324dfe616ad33a0d07a326a1badc632f91582632f33",
+      "git_blob": "ff67a579faafb6b0410f12d785a837d5a336ab03",
+      "physical_lines": 812,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/py.typed",
+      "copied_path": "components/docling-slim/docling/py.typed",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/service_client/__init__.py",
+      "copied_path": "components/docling-slim/docling/service_client/__init__.py",
+      "sha256": "07ffeb438de28c27baada220d7835c47d080c669f27ddec64a19f9cea0e8fa7a",
+      "git_blob": "4490975680e9387a197fb9d233152533b6b9ad9e",
+      "physical_lines": 80,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/service_client/_async_client.py",
+      "copied_path": "components/docling-slim/docling/service_client/_async_client.py",
+      "sha256": "4f3a989bc7c7a66878a6a1a5da2d34ebb0a53313bdd7b85ed56b88e276e42456",
+      "git_blob": "0c9a3eab61795a64e4224fb77959106a8cefa7fa",
+      "physical_lines": 1075,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/service_client/_scheduler.py",
+      "copied_path": "components/docling-slim/docling/service_client/_scheduler.py",
+      "sha256": "95f94a59e33fe1c896d3be8e1bfe3393b82716af07338f8eec7c44fd1f4fbeeb",
+      "git_blob": "20b68aa9da21e35bafce529295306bde33fb2b3f",
+      "physical_lines": 89,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/service_client/client.py",
+      "copied_path": "components/docling-slim/docling/service_client/client.py",
+      "sha256": "0185da63de80eb440f0d21831408d2a3a8db9043ef2b577b964863ac6f448723",
+      "git_blob": "37f3ebdd1d13345a273bd81d61995ca4c3d463f5",
+      "physical_lines": 2310,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/service_client/exceptions.py",
+      "copied_path": "components/docling-slim/docling/service_client/exceptions.py",
+      "sha256": "f4f33089ba21a2c91973bb6896a0f064e48e222dcac823d8ccaa5771ab97a689",
+      "git_blob": "4c672cbf8814becce2dc265f25cd4f5732192cc4",
+      "physical_lines": 114,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/service_client/job.py",
+      "copied_path": "components/docling-slim/docling/service_client/job.py",
+      "sha256": "81e8e6cfd037a0a26ab58dcbb38e11afef567f9cdee26152a7b8b57b1561a411",
+      "git_blob": "2b26970165ef847cb91eb41d775d75989c8a6751",
+      "physical_lines": 124,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/service_client/watchers.py",
+      "copied_path": "components/docling-slim/docling/service_client/watchers.py",
+      "sha256": "704dfff7d9a2ab30937474f6371fcbc16c76f8e6b6aa39f9d130bbf55997753e",
+      "git_blob": "e27a412e0d53d624cf331f74234afdd3104ba13a",
+      "physical_lines": 458,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/__init__.py",
+      "copied_path": "components/docling-slim/docling/utils/__init__.py",
+      "sha256": "fda02e8847d3326be24b3815e79c921ca8f7e46bd9df3c24acfd8e755e37848e",
+      "git_blob": "c4d8f5f986d21543bc8872292272b9f1a5c1d68c",
+      "physical_lines": 2,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/accelerator_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/accelerator_utils.py",
+      "sha256": "369aea6108f4397aca4ecaf5abb5ae20130a343ce81bd53894a45a412d98f5b9",
+      "git_blob": "74d1c116181d8efff1ebcdfcbb1618a1e2e59bc6",
+      "physical_lines": 137,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/api_image_request.py",
+      "copied_path": "components/docling-slim/docling/utils/api_image_request.py",
+      "sha256": "f482bb1209ea290cfa724037cf7ae206a3573d3e066a23a0fcfcd53be351c9d3",
+      "git_blob": "7613fd2060e0e82a5d1c6fe9a35f22f43e1198bd",
+      "physical_lines": 440,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/chandra_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/chandra_utils.py",
+      "sha256": "ffefe58b851e44debc3c0517ca88273d3a76d1dc0f868bbdb55eedd7ff6d5a6d",
+      "git_blob": "9381ee7d39acaafcad51f5f29b15b9b4b9bde5f3",
+      "physical_lines": 827,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/code_language.py",
+      "copied_path": "components/docling-slim/docling/utils/code_language.py",
+      "sha256": "3a4ac49044c8c3508c1d4fbe30765018989520fc2a343a5cb4c3b39fe1532cac",
+      "git_blob": "597f3de99dabaff1eed31d5375b6a3d84ed4e8ab",
+      "physical_lines": 264,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/deepseekocr_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/deepseekocr_utils.py",
+      "sha256": "2ac8cfe08e2de1f4dea6532480972ffbf1274948b5cf98939b72043bfda22b41",
+      "git_blob": "76a39aaca55a20f895ca042bbbda4d8ba65a9c29",
+      "physical_lines": 434,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/dots_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/dots_utils.py",
+      "sha256": "275598760faa3377ccfca453c4bbff49c8912a33875b85601e314ea387b83622",
+      "git_blob": "da3d275a74674c7d975e9edf00ca030c461d2de5",
+      "physical_lines": 340,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/font_style.py",
+      "copied_path": "components/docling-slim/docling/utils/font_style.py",
+      "sha256": "9df7b6873cab1b5ab31f67acc977b1d07f1b79e1000af995ad2d3297160d52e3",
+      "git_blob": "ac62eec1b847b63328fe53603357db44055c791e",
+      "physical_lines": 170,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/granite_vision_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/granite_vision_utils.py",
+      "sha256": "c7538c6106cacf53894c4b8c81c3e22d974e71c3d1c969f9e5a626aeccc8de09",
+      "git_blob": "3ee7730cd3ca73c754ed6bf64c1840f476f0f01e",
+      "physical_lines": 29,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/layout_postprocessor.py",
+      "copied_path": "components/docling-slim/docling/utils/layout_postprocessor.py",
+      "sha256": "ec49e7254f30bd679ebc3bf8267f7bb7519db8cbef8d242122d7b7ecf86bec79",
+      "git_blob": "1735885a40b54ec74ca88d329ab9550e3fa75a53",
+      "physical_lines": 756,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/locks.py",
+      "copied_path": "components/docling-slim/docling/utils/locks.py",
+      "sha256": "ba0ca3b4cd6aede744ac6e6415e6c851a1516e15a93a6914506cd7ee66a46244",
+      "git_blob": "6d7f3fe3ee842b8087ebdbcf4820d05d3e65a80c",
+      "physical_lines": 6,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/mineru_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/mineru_utils.py",
+      "sha256": "d56fecabae59055ad11899b00562bdedeafce866799274137b6e9fdb9acbe02d",
+      "git_blob": "5b007543a75f7aa2fd0304076b0738c497038510",
+      "physical_lines": 444,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/model_downloader.py",
+      "copied_path": "components/docling-slim/docling/utils/model_downloader.py",
+      "sha256": "36bb09c48b52e7dc236d1d7573574afba665ca1017d41b228d95e76195fa4e97",
+      "git_blob": "aeb250e794f6306853ac3bbaa15def18034ac872",
+      "physical_lines": 287,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/nemotron_parse_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/nemotron_parse_utils.py",
+      "sha256": "1f405c851b25bc54545e857a477d1f66a0cf97de9ec74afb25ffec7fcaae4c2c",
+      "git_blob": "134f794201403b242e60e4c8dde0f1a8ddd22811",
+      "physical_lines": 335,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/ocr_language.py",
+      "copied_path": "components/docling-slim/docling/utils/ocr_language.py",
+      "sha256": "ec8951e65aa721411e8256586071cc044b1ef6c60a560756f5b75b2c1b341251",
+      "git_blob": "003dd9b1e08050e44101278dfe1a3fac12cca7e6",
+      "physical_lines": 332,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/orientation.py",
+      "copied_path": "components/docling-slim/docling/utils/orientation.py",
+      "sha256": "1c79d38c86b57a163081278b56d3161f0112d6209e501c6f2c324746168530f7",
+      "git_blob": "af54b56d1d595c553bd1f6d9228b161f508b0f01",
+      "physical_lines": 68,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/otsl.py",
+      "copied_path": "components/docling-slim/docling/utils/otsl.py",
+      "sha256": "7dde8ee49f5d3d77803fddf0cb3d5f0bda83527e870d15eb13ca09ba8790a412",
+      "git_blob": "e012b141fbb5b572e3df8c62b84ddfc31ecb5f78",
+      "physical_lines": 90,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/paddleocr_vl_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/paddleocr_vl_utils.py",
+      "sha256": "53597708ea8cde2f3477c49bdbd461c0a7868f8401c4153f9f536f5694eb1839",
+      "git_blob": "6b3d05241ef2cea93ad97935efbd72733fb4dd08",
+      "physical_lines": 339,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/pdf_outline.py",
+      "copied_path": "components/docling-slim/docling/utils/pdf_outline.py",
+      "sha256": "ba5c8ddf73716023b1cbf63259d69e14b8e04833c23704cb9b897814371bee4f",
+      "git_blob": "24d45bcf18cd1201eac21d939d4d04b4cbb9394c",
+      "physical_lines": 178,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/pipeline_cache.py",
+      "copied_path": "components/docling-slim/docling/utils/pipeline_cache.py",
+      "sha256": "ddf75964125540431667d253d22edfa083aca3aefb644d5ca71c56cc2a580744",
+      "git_blob": "1ac0ea7243f5c63990f156a4a693d7d390f095ec",
+      "physical_lines": 62,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/profiling.py",
+      "copied_path": "components/docling-slim/docling/utils/profiling.py",
+      "sha256": "c082444096100f9c6d46512248f9eccae33fbde4bf92dd1d63b37dc7b596ecc6",
+      "git_blob": "b2c7b0f0470c8e4564927f5e55db1a9ffbefe337",
+      "physical_lines": 138,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/speaker_diarization.py",
+      "copied_path": "components/docling-slim/docling/utils/speaker_diarization.py",
+      "sha256": "08651484329e0ba159db713fdee067bbba985a67560e9635c722ecd8f2db20ed",
+      "git_blob": "5844a50b8e20867cb8a55725b687e7768b2d4f34",
+      "physical_lines": 233,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/text_decoding.py",
+      "copied_path": "components/docling-slim/docling/utils/text_decoding.py",
+      "sha256": "1e45f6f390c2dcc75fc72ec9720f63bc4dcfb8a21efc66a18bf5c6125a0021ef",
+      "git_blob": "ceb3fee618b7f8f3f54fc8852703b61487e60940",
+      "physical_lines": 158,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/utils.py",
+      "copied_path": "components/docling-slim/docling/utils/utils.py",
+      "sha256": "9218b997c5ef0b381296fa67ca74982a00613de0ee465d66b68d74067099d39b",
+      "git_blob": "5053dcf4e82e23eda37c525774e2de3e5f3e1f15",
+      "physical_lines": 87,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/video_frame_sampling.py",
+      "copied_path": "components/docling-slim/docling/utils/video_frame_sampling.py",
+      "sha256": "11e072455ccf771afb311a21d79bae634b36d329c73bec5fb923e5c1ce2be359",
+      "git_blob": "bf6d63892184fe67b3eef09a5f796a8be98be996",
+      "physical_lines": 690,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/visualization.py",
+      "copied_path": "components/docling-slim/docling/utils/visualization.py",
+      "sha256": "5e166d5a515a83d760ac3dff260483f7c3a6528a4992f8e347355f24395e2d9b",
+      "git_blob": "c9d964a1981cc697a19217029e49308de44e17e9",
+      "physical_lines": 141,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "docling/utils/vlm_utils.py",
+      "copied_path": "components/docling-slim/docling/utils/vlm_utils.py",
+      "sha256": "653032d6eb89266ab5d510201728f875238f25ba76fd921343b6edd26a32d94b",
+      "git_blob": "d3ed9c5d11ca864f59a0f8ec38e708c29a964675",
+      "physical_lines": 153,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "LICENSE",
+      "copied_path": "components/docling-slim/LICENSE",
+      "sha256": "edb765d1e3e60d0c7a7d5fba5f2bb2c3c29f7465cecb5c22cf1185c884954e4c",
+      "git_blob": "6684a401bf0f700fd37104ab7c8da340036f7166",
+      "physical_lines": 21,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "README.md",
+      "copied_path": "components/docling-slim/README.md",
+      "sha256": "ce605634509dc87d79182131ad001e5fddf6053963b9045b971c6e87e6b9bfa1",
+      "git_blob": "3297b7881575dc853facc5add4cc4c8dccc12f14",
+      "physical_lines": 167,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "packages/docling-slim/README.md",
+      "copied_path": "components/docling-slim/packages/docling-slim/README.md",
+      "sha256": "72caf57b622f125f82c28f191fe242d98c009fab89eab748af688bb3b250bbee",
+      "git_blob": "6905f978e90ec29eb5cac1fbdc121794c367f490",
+      "physical_lines": 126,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-slim",
+      "upstream_path": "pyproject.toml",
+      "copied_path": "components/docling-slim/pyproject.toml",
+      "sha256": "82579239fd11963ac899ede191fc6ad3949cef02e9b48bce79c9a3182eb3345f",
+      "git_blob": "8993c17e45cf602201965f1b3314405b0e6f3318",
+      "physical_lines": 535,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/__init__.py",
+      "copied_path": "components/docling-core/docling_core/__init__.py",
+      "sha256": "c1dea7ee1f34fdbd8589725734db3c76ee219f1e3290740be258445c13362951",
+      "git_blob": "23bce9e8616657186e767dbd2ddd308208d35b44",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/cli/__init__.py",
+      "copied_path": "components/docling-core/docling_core/cli/__init__.py",
+      "sha256": "0badf25a27f3a40d0857b6160dab6901dae1a15f338eac402afd3131fd3d55d3",
+      "git_blob": "a3ba1f69ba5376beb4147de80bb7902f860ed41f",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/cli/serialize.py",
+      "copied_path": "components/docling-core/docling_core/cli/serialize.py",
+      "sha256": "19469268a95533ab355609621bd6aa2541befdc71f0f2e1472b2eaa080d8391b",
+      "git_blob": "e9ac2c748bf8b5f41b9e824cbc263c1d9161de18",
+      "physical_lines": 144,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/cli/view.py",
+      "copied_path": "components/docling-core/docling_core/cli/view.py",
+      "sha256": "f11054d2cd6a2d1935f1f6031d3bf7492503e58b449bb55038adbecc46aea417",
+      "git_blob": "b93bad875e0ef3c6ef441cbfb320e469ffb35abb",
+      "physical_lines": 79,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/compat.py",
+      "copied_path": "components/docling-core/docling_core/compat.py",
+      "sha256": "c6a24c834131435e090b5f4d0733828c5a2697ceb22010308e535de3ba12504e",
+      "git_blob": "c01776f002c9e5f7ae51168951b3aafeb1d746ae",
+      "physical_lines": 649,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/experimental/__init__.py",
+      "copied_path": "components/docling-core/docling_core/experimental/__init__.py",
+      "sha256": "a7efca2bacd4685f07cbff85653e38cac12f86ea51326ebcf0d23eca7c93e265",
+      "git_blob": "7f2dd39279a148679c5f2aec37f3bae5435af80b",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/experimental/serializer/__init__.py",
+      "copied_path": "components/docling-core/docling_core/experimental/serializer/__init__.py",
+      "sha256": "72f18a2b99ff7f8beb9240621567ded95151b33953d3504105068b41d03da303",
+      "git_blob": "5c450a0ec47b479f43b9d46d8ecb4f6daaf6db96",
+      "physical_lines": 5,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/experimental/serializer/outline.py",
+      "copied_path": "components/docling-core/docling_core/experimental/serializer/outline.py",
+      "sha256": "f29b582804b4815b7aeb72e22bf491249df458f0fbe3b8180a4830339c3184b1",
+      "git_blob": "8c6d890e1b27273f17b478feedd7af2a3281760e",
+      "physical_lines": 818,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/py.typed",
+      "copied_path": "components/docling-core/docling_core/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "physical_lines": 0,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/search/__init__.py",
+      "copied_path": "components/docling-core/docling_core/search/__init__.py",
+      "sha256": "cf44310128df9e5cab3e37585acdfdb03cac8bc7710c560af7b64bba2731c4c1",
+      "git_blob": "752d7f8baca2845dc9496dead90d00985d7d4005",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/search/package.py",
+      "copied_path": "components/docling-core/docling_core/search/package.py",
+      "sha256": "d4798e0ad50dcbbcf7d4566e88d56e4efab33c519006c35184ef6c88a995a6fa",
+      "git_blob": "4976ce532d7d7153ddba97bf7e8916a7814a2b2c",
+      "physical_lines": 45,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/__init__.py",
+      "sha256": "f5d8e4f091651b63f7c2b31943232b43a8e45e49763d649369c7a927e5371c1d",
+      "git_blob": "3b5d7cf1a8c191c2e4d3b80a7b158e831efda1ed",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/__init__.py",
+      "sha256": "8a2f6bcf20b7001e98d637e38d0e49b7703bc516f0a0ef320f749ede8813102c",
+      "git_blob": "f1cd4b85167a25e89cf3a9a115729c08fed9d640",
+      "physical_lines": 19,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/base.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/base.py",
+      "sha256": "67e76178f06ae21368b3c5264a142c75a109c4ace7c4a934709063e517be65c1",
+      "git_blob": "90a14add55ccdaf82745c578ab7932a649f5e4da",
+      "physical_lines": 129,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/chunk_expander.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/chunk_expander.py",
+      "sha256": "a9572ab0b3c84f3086f9f5ee420d29190c28502fd6c60103cd947ca4b5c0dde3",
+      "git_blob": "8e3cf1319c49e963ecb6e267f202e90a4689eb56",
+      "physical_lines": 166,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/code_chunking/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/code_chunking/__init__.py",
+      "sha256": "cb15fa689a93cdc0800ef565c1a2e388c676455c372885d82603013637b0c7ba",
+      "git_blob": "dfe9610615959703a0b86898e05c7dcfb60821bf",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/code_chunking/_language_code_chunkers.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/code_chunking/_language_code_chunkers.py",
+      "sha256": "e7e2e9ffff834399e7e471d599e6736b33ab51a38e0e456618c825d30315e374",
+      "git_blob": "8587c987d44bacc34cfe4fb61312fbcf0a0b43ec",
+      "physical_lines": 1532,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/code_chunking/_utils.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/code_chunking/_utils.py",
+      "sha256": "f004b2b938145f752f0d20f70408234b2aec5579bd9568764350b3b1e76a0734",
+      "git_blob": "7428557bc7315ca4888b90e33abdd361e1d19857",
+      "physical_lines": 176,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/code_chunking/base_code_chunking_strategy.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/code_chunking/base_code_chunking_strategy.py",
+      "sha256": "55b7f8dc2a3c713cecd66e7fbbd0db8325b148c0bd3601d8b6d54e4de4b562f0",
+      "git_blob": "9fa55364d4b57247fbb171b92ec612e8ed4ffac5",
+      "physical_lines": 23,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/code_chunking/code_chunk.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/code_chunking/code_chunk.py",
+      "sha256": "d2f028bedf85c5d9cc6ed0e426eb7edf2a59ed8b5414af1b46d2506fec077341",
+      "git_blob": "2da0a20aac2eec0d0e41a2af8957753119c0e74a",
+      "physical_lines": 43,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/code_chunking/standard_code_chunking_strategy.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/code_chunking/standard_code_chunking_strategy.py",
+      "sha256": "757241fa279266fa50712f75fc3c9d2b1b691ca1eb5c8cbab6e9cfe78dc35117",
+      "git_blob": "aa7d5569efc69ca80fb1e814348f090d2a45431a",
+      "physical_lines": 94,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/doc_chunk.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/doc_chunk.py",
+      "sha256": "6fad645b6fafd6b6a7e7e3a93dc11123a73953ffd08f1aedb39b04b03f4ef523",
+      "git_blob": "059796ad2e44935c89ccf1cc8225540173492dd2",
+      "physical_lines": 91,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/hierarchical_chunker.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/hierarchical_chunker.py",
+      "sha256": "1d870b5db61cafc16b513d95f86fc52b10272b212b0d5ec2e3e8f89cdd6fe9fd",
+      "git_blob": "40770a752d3d8980b0414811fe4af956b3e7b300",
+      "physical_lines": 297,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/hybrid_chunker.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/hybrid_chunker.py",
+      "sha256": "aba83ad2a28bfb44e614d0a3d5120fac3f201582f8fdd9590907a21491f62b87",
+      "git_blob": "a39899122581f3d89a229f563c33278c13ab0918",
+      "physical_lines": 413,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/line_chunker.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/line_chunker.py",
+      "sha256": "599f9ab528736f11eba66884bc7e019318de55963c4c78e5b1a8d0a63427ec1b",
+      "git_blob": "26a970057b2d64a01a4b7d53bf10a41cca630c17",
+      "physical_lines": 340,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/page_chunker.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/page_chunker.py",
+      "sha256": "8e29e2a86b4f6931fba6c88cfef68650cf95443795402ceebffde7326afe1362",
+      "git_blob": "6d012b24c6a45642ced54fc285605fae752ccc3b",
+      "physical_lines": 60,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/tokenizer/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/tokenizer/__init__.py",
+      "sha256": "f9b857393a6823b49893bbe7e3bcfc124f916458c99384df65ac31b05b8d1e71",
+      "git_blob": "5bdf0efb9f9782f5e6c6e2cdb967efa6c30a5d3c",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/tokenizer/base.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/tokenizer/base.py",
+      "sha256": "da038140f609602d225973a0306dc388d3fbc4406d8a2ec361c89bd22102ab9a",
+      "git_blob": "89e9849a7effefaf83d62706119f117f37a5840b",
+      "physical_lines": 25,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/tokenizer/huggingface.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/tokenizer/huggingface.py",
+      "sha256": "7936a4bccd12b32d90102bfc4d679927ca9e0d57c960515b52a5ba33255d6292",
+      "git_blob": "368362764d76bcdbf4d67c7d74149a340afaaca2",
+      "physical_lines": 93,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/chunker/tokenizer/openai.py",
+      "copied_path": "components/docling-core/docling_core/transforms/chunker/tokenizer/openai.py",
+      "sha256": "0b1a6804d791bbb3520a9dec963423a05d6b18f3829061c178ab20c014113f73",
+      "git_blob": "f67dec1e2cf8d947c4ce88e20c56eba08ddb1fb2",
+      "physical_lines": 49,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/deserializer/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/deserializer/__init__.py",
+      "sha256": "82242b9e76144d002ad93f192bf27f671d1646c0bb4a5bf21793c2f065b44432",
+      "git_blob": "1e0e44b2a62294afc7d3dfc707bdb5635afa27b1",
+      "physical_lines": 15,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/deserializer/base.py",
+      "copied_path": "components/docling-core/docling_core/transforms/deserializer/base.py",
+      "sha256": "0d5abb51d20c6568ea7d1bf3f314b6c47f48cd860c56e2776dc8cc43a4982cdd",
+      "git_blob": "03be0bb7a9066b1de54efb244d19c4d651393de7",
+      "physical_lines": 14,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/deserializer/doclang.py",
+      "copied_path": "components/docling-core/docling_core/transforms/deserializer/doclang.py",
+      "sha256": "cb027d173ae0e895b12c87b9f84c96f95024baf88812a9b8e914037b75d15de7",
+      "git_blob": "fb29225c28df4844686baf07807e8a4e33c14a5b",
+      "physical_lines": 2473,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/deserializer/doclang_source_mapping.py",
+      "copied_path": "components/docling-core/docling_core/transforms/deserializer/doclang_source_mapping.py",
+      "sha256": "201001b294489fde1b2a496351ea0a6775b9318a3eaf36a8a4ef1f7700fa4162",
+      "git_blob": "5d187ff8ee4ab639a573c1c888c45d0a0a7dcfe9",
+      "physical_lines": 145,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/profiler/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/profiler/__init__.py",
+      "sha256": "8fe7a1f0a9125e1db4336ea8cfea85779a906aa1b43425ac9a15c8abecac0897",
+      "git_blob": "9e153b293c4a1568cdd92343bc41d62b1be7b201",
+      "physical_lines": 17,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/profiler/doc_profiler.py",
+      "copied_path": "components/docling-core/docling_core/transforms/profiler/doc_profiler.py",
+      "sha256": "3dff1dc98d15bdcc8a07332c68be6ee9a2f7e8b4970f5f3984d2237696d3c948",
+      "git_blob": "a890d9edefd18ceaba4605311e7affe5db02b6a0",
+      "physical_lines": 425,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/__init__.py",
+      "sha256": "8ed211bad789508cc808b654946a7db8ba2af2f21ec5282feddec14fc78f0382",
+      "git_blob": "dc49e239a1d1c94e0058a407f2939a3d1e8ce087",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/_doclang_utils.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/_doclang_utils.py",
+      "sha256": "80cf277d4883470fe4ca25004ee1a5db560a60e87a7b50d0caee28a3e1f35771",
+      "git_blob": "f73004f376d1e910a12e32c33799f7f2d5524989",
+      "physical_lines": 1058,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/azure.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/azure.py",
+      "sha256": "184fe6f81fde012e056f92d623eff5fc89a3371b0b5b87a50fc6cb07ebf485c4",
+      "git_blob": "0abad7d80c995bb46e578b30d1ca1605dcd589a0",
+      "physical_lines": 540,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/base.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/base.py",
+      "sha256": "baac6719e0dc5bc73bc7375d633e9ac8cc87203024266ec9b2d176f48ddfdb10",
+      "git_blob": "6f8d8f7f9e98758fc594bdcff237c98f6f303a8f",
+      "physical_lines": 367,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/common.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/common.py",
+      "sha256": "076f122059d833d5f8721dbc0d6ef715d399d7d6721e5bc167c8be515ee17d81",
+      "git_blob": "6a3337713291632d164f46eab52fddd7cc1f8e7a",
+      "physical_lines": 787,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/doclang.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/doclang.py",
+      "sha256": "66dd546487c646f1e9ab564e5cc3dfe41a21ff44f7c9d5075d77fa613766b630",
+      "git_blob": "41277f809d9b75f808391d0a377ab9db0635bc97",
+      "physical_lines": 2443,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/doctags.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/doctags.py",
+      "sha256": "99446c54efeecb3773b490804251a22870fe242710cbaecdc04e895c9ae9f292",
+      "git_blob": "46ef3f324d96e4f274ae129652559a03990cca62",
+      "physical_lines": 640,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/html.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/html.py",
+      "sha256": "a6cbf1b5a92e9e46e5eecec79494fea6a1f69b85bdb930da70073624700f3aca",
+      "git_blob": "99aca0177dfe4945e291ce3f1527622fc18f57d8",
+      "physical_lines": 1325,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/html_styles.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/html_styles.py",
+      "sha256": "e184285fe34b6620272bd566c3a9ba444c52b8f206052bde719d752fb1b6df4a",
+      "git_blob": "4ff1cbe1bf491469a0ef806f660bd213f5bd4a45",
+      "physical_lines": 310,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/latex.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/latex.py",
+      "sha256": "3c7037823f780696100938f8f662879a71f2aec3e53266e5df500e96fded34f5",
+      "git_blob": "9d44860aca3e3b8c7dc8829803315661d22a8273",
+      "physical_lines": 726,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/markdown.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/markdown.py",
+      "sha256": "cb93b2280e0d8dc56ff34c6afae36c0e19bc9351b76c9563e663c744f47b5430",
+      "git_blob": "d5bc0ded0b0ae0bc892d63b77c799ab75d6ae699",
+      "physical_lines": 1349,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/markdown_excel.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/markdown_excel.py",
+      "sha256": "c7f49685ac9c7bbd633f7c0ad8b5aa0385fd24fe51dcef438f93aca2cbbd9875",
+      "git_blob": "4f5f77d63aa9d3dfc00f15b8987dfb2d227a2d8e",
+      "physical_lines": 66,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/plain_text.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/plain_text.py",
+      "sha256": "80acd0bebee34ed871f883fcd4818e360fadb22cb05097a2dacb8d4a1c75369e",
+      "git_blob": "2775b98e9444f33001fdaaf536961782424b0ba5",
+      "physical_lines": 96,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/serializer/webvtt.py",
+      "copied_path": "components/docling-core/docling_core/transforms/serializer/webvtt.py",
+      "sha256": "5f622b8ceed6ebb8e8664bfe10d646fe6ea531ff3909cbd7cd38e785e5beb446",
+      "git_blob": "7553db2d2e96a4eae8cf8cf2f4637acb6b567116",
+      "physical_lines": 523,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/visualizer/__init__.py",
+      "copied_path": "components/docling-core/docling_core/transforms/visualizer/__init__.py",
+      "sha256": "8147c5db9ca227f28ee3a64850da9940e646cb63cbc7a8279ebe80658c4a1d72",
+      "git_blob": "721e95a9e15ebb152651596857e5787b6105df43",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/visualizer/base.py",
+      "copied_path": "components/docling-core/docling_core/transforms/visualizer/base.py",
+      "sha256": "bcd79f0645531a31297eae8762dab8e34f6cce1f411452e7d5ebde94ed114079",
+      "git_blob": "1f244825a420724f18cd8925e975ca9e1f8ce18b",
+      "physical_lines": 23,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/visualizer/key_value_visualizer.py",
+      "copied_path": "components/docling-core/docling_core/transforms/visualizer/key_value_visualizer.py",
+      "sha256": "2e358664e4de2aaa511294db9da825e4cf30afec403ac0e4d9ffd4501678ee77",
+      "git_blob": "270dc0cd601a0c09c873c37d671d4471747295f5",
+      "physical_lines": 237,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/visualizer/layout_visualizer.py",
+      "copied_path": "components/docling-core/docling_core/transforms/visualizer/layout_visualizer.py",
+      "sha256": "d12f1ccaf52a3caccce8e98b8a725336505b7b8a35ede14cb68082fab93b30f5",
+      "git_blob": "79a166f7169888a906eb0a8c30c9acddc65b759b",
+      "physical_lines": 235,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/visualizer/reading_order_visualizer.py",
+      "copied_path": "components/docling-core/docling_core/transforms/visualizer/reading_order_visualizer.py",
+      "sha256": "5bcd56bbf748694a4c0e3675da37f4acb73c53aecbb087445fd0c9827506bb1c",
+      "git_blob": "d8a2d5de5fcc28b0ea088d6ac85db4ae84ef913d",
+      "physical_lines": 237,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/transforms/visualizer/table_visualizer.py",
+      "copied_path": "components/docling-core/docling_core/transforms/visualizer/table_visualizer.py",
+      "sha256": "50e60e36d2336af39e4966b4ebb117592165a3c12cfe6fe89172b100d0708139",
+      "git_blob": "4edd3b869d431966f74c9ed878397dbc2f0e7970",
+      "physical_lines": 267,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/__init__.py",
+      "sha256": "dbb145aa601e054a909bbdf46fcbef4fe7e019cadadca3f320c5e540f55a8e0b",
+      "git_blob": "0fcdfe7588666ecb8ca02056d24e330cbec6b7be",
+      "physical_lines": 3,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/base.py",
+      "copied_path": "components/docling-core/docling_core/types/base.py",
+      "sha256": "602f460cd0919e7625b5635f08f77425f170dfeba0491952cf9979a7c9c4ae7d",
+      "git_blob": "a7002e18c3216ed72ad40175452c350d27e28794",
+      "physical_lines": 46,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/__init__.py",
+      "sha256": "05faa06d0ef39d68186693d6908003e1ef337d4c76980b0a05d2e27171f0e454",
+      "git_blob": "7ca935f59be7b25fa8c36e3b427adb8abd65629e",
+      "physical_lines": 203,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/base.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/base.py",
+      "sha256": "a9836ae38b966a78cd944d12afa1f25474dd536efa8eac6301f12c75aaf36fc2",
+      "git_blob": "5a9f204ded8f7fe0cadf45f9466de97985f3fb88",
+      "physical_lines": 456,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/__init__.py",
+      "sha256": "f40f95b14774411e873830627adf1ff84bb1b65995d1a74c0600a4027cdae3ef",
+      "git_blob": "252df0a505610bfc76314bfc3e222094b85280e2",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/annotations.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/annotations.py",
+      "sha256": "a66995b9aced79a6a4522c99a35983cb3ee8f815dddd3ea76745b1e1914a023c",
+      "git_blob": "237552ae6e32ee5166afa07f68daa51f0f99dec0",
+      "physical_lines": 26,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/constants.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/constants.py",
+      "sha256": "261b48b8f47d1f709e7b264d33af2800d13ae26cf51b8ac69a8ade033563310e",
+      "git_blob": "6ca699126b233019c36bf06819ff018eed31ac4e",
+      "physical_lines": 86,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/content_layer.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/content_layer.py",
+      "sha256": "dcd1a9a09dea6113017c89f20bd0189bee7a3643b2f74c7b00a213dbf9bc52bc",
+      "git_blob": "8e8df21967c6de06c5523b903bb5e915711d760f",
+      "physical_lines": 16,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/formatting.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/formatting.py",
+      "sha256": "597b73dc3869608c4902c82f5ae91945f08275862497ab90e52e316fb3a83aeb",
+      "git_blob": "4a3840e7c672347924974b6117af0b112b6d353e",
+      "physical_lines": 23,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/meta.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/meta.py",
+      "sha256": "e9a601cd1e1f01ad422f32084d8a350edc59ddee6a04d7d3b04337bfb52fdfd5",
+      "git_blob": "afc2ee73893072df39038a03f0840e9b708ae415",
+      "physical_lines": 290,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/origin.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/origin.py",
+      "sha256": "4c9575518a4e6d62f44de179e9e7d79b3ede16ae76df1800bb3b8bf1cbce79a7",
+      "git_blob": "efe88183d0be43340f1ad715d86907f913a21c54",
+      "physical_lines": 84,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/reference.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/reference.py",
+      "sha256": "fa17efd4d95f3a674b47dd34c014d1fc3fc3b845fe66ecbc459f08d27bdd6aa6",
+      "git_blob": "b688a7adbd52b49dd5e3d019bcf46c77d84382ce",
+      "physical_lines": 203,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/scalars.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/scalars.py",
+      "sha256": "6b222230a6b71a5454ad511e8b35dc2f20ed851bff7623c40db0351ef813b9fc",
+      "git_blob": "0cb46c3e98f0848c2fc82e49fcc7b27b62a08931",
+      "physical_lines": 10,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/common/source.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/common/source.py",
+      "sha256": "b71fa45492dea625f24697a049af0b17f03db48acd0777433e73f16bc4d70a38",
+      "git_blob": "648b3728187a027fce69e563579063f936be3eeb",
+      "physical_lines": 72,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/doctags.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/doctags.py",
+      "sha256": "39125e6a1614703c2369962e86be612a2464856a90cff89147cc36262e9c68ba",
+      "git_blob": "033c538e9c7420085d8bf23d121b26495c39b261",
+      "physical_lines": 79,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/document.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/document.py",
+      "sha256": "0f2f342b78a1ecea80dd41f3b38c8f8823164719e87e1709f54e5ff2b76b25eb",
+      "git_blob": "5b12a5064026790bf310279fceedbea6485bbb32",
+      "physical_lines": 5907,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/__init__.py",
+      "sha256": "2d4a4a0927d85465d46bb85e84324dfd7f180df564b892cbd001c027b0708fd8",
+      "git_blob": "9c1e08447ebf590fbc183f5ffec262a0a625ae2c",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/code.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/code.py",
+      "sha256": "30f48a9d7faa6f4186b953c3ba3c294c40f73404cefae130abf0f4ae64e14c75",
+      "git_blob": "8ad1f2aeb1bc028da56088d43f4f874db66de998",
+      "physical_lines": 61,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/content.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/content.py",
+      "sha256": "4db237bf23011ae810be800d1d2c804b2e89cf913cbac3137e2cd1db128b9aca",
+      "git_blob": "f2f77581ab884c971957578fd0f37386bced0c78",
+      "physical_lines": 27,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/form.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/form.py",
+      "sha256": "035df47d03ef0ee1e11da6c52b3d48cb8ad5f27d9845b3ac8f4370d150f0f601",
+      "git_blob": "731301df11c1f945555247537b3d38207b586b7f",
+      "physical_lines": 26,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/group.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/group.py",
+      "sha256": "dc8d459ccc724ec426f5d2b33e93ef016876a73c27bc43d03e5036ec34deb186",
+      "git_blob": "80052c404cc3e95153485cc343ff3164980f7c95",
+      "physical_lines": 61,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/key_value.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/key_value.py",
+      "sha256": "89fa11785530a265320574db25694890e06bfeeaded33c6190d710b106122fce",
+      "git_blob": "2263ca417311ad669d0178f8aab04fed3f938f51",
+      "physical_lines": 113,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/node.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/node.py",
+      "sha256": "fbb578f9c5ed6f6c14a9a1c48a4968e97eb04b004461160c0e8b9dda5582e5f1",
+      "git_blob": "88128f6170dbec9678c51d1622d10f4fa7002c7c",
+      "physical_lines": 233,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/picture/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/picture/__init__.py",
+      "sha256": "728c98ffb13748f830d30f9cc81ef7d6201a88fdb570d0db6ad6f8df60640d94",
+      "git_blob": "672668490b9e4112ddfa9a00b8ae182591af2eb4",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/picture/charts.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/picture/charts.py",
+      "sha256": "1ff688bbf28e22726cb2e65969b17956a553f895d71636be0f550f1b42af4ebc",
+      "git_blob": "d2c548c7097e279afc8bdae501932718bbcabc4d",
+      "physical_lines": 169,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/picture/classification.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/picture/classification.py",
+      "sha256": "91fbd04ea86cd420ee3976874451275c8441ec6b30b38314ce7c259f6dc4779d",
+      "git_blob": "8d2800a5c945d01074cf8dd07787520ec48be960",
+      "physical_lines": 27,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/picture/meta.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/picture/meta.py",
+      "sha256": "05baf3ddc8d5f88c6b7a2620ef3c930c1733ddd810d004ec602ac9062e833b8e",
+      "git_blob": "f0d6037b2c5bdb4dd808e54b505e3018f52d4c82",
+      "physical_lines": 57,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/picture/molecule.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/picture/molecule.py",
+      "sha256": "99c4c7542674904cd11f6d7b8241b44e79e7d1f4eb052896bc666bde00fad937",
+      "git_blob": "2ea8a28625a030a413bc46bd4bcff3cecb7e9e8f",
+      "physical_lines": 23,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/picture/picture.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/picture/picture.py",
+      "sha256": "21bbc2a6f1e7562f892e80dfa1bf61f12a2b962b63d478614b915e9d6907fd4e",
+      "git_blob": "5633c144444cfdcf66ccb94b59bd9745b22151c3",
+      "physical_lines": 272,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/table/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/table/__init__.py",
+      "sha256": "d74edc9d6a9b8a5c80aac63fc01c1aa2a600d727410bfdf7be03bf3d1b2031b3",
+      "git_blob": "cf83f1dea052e221ad46143f2153184212742ca7",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/table/table.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/table/table.py",
+      "sha256": "eb9f2e893243b0bc87c0e8373737ab4013d97e74cd11b5b35bd178e4bb259547",
+      "git_blob": "81dd16830563a526ffc24ad705ff4db49f7bfce9",
+      "physical_lines": 354,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/table/table_data.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/table/table_data.py",
+      "sha256": "3fdfc587f46b5723ed59f460c3a663fb9e368b0fb25f2c9c693787be83a0e5e4",
+      "git_blob": "1e334d21884ec1be3deba5e26e3f802938b6f6b0",
+      "physical_lines": 718,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/items/text.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/items/text.py",
+      "sha256": "9e9a9de2e6487893c82b010bcfeebadc78ff7a157e66f4bce7dfed1c95ec9577",
+      "git_blob": "403ff8351cf1adf1c3474aab1ee2c43442f98b02",
+      "physical_lines": 152,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/labels.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/labels.py",
+      "sha256": "c08b8257e302fcbe133b876839aab97ef0c6dd6669f224f81dd8ba10eb6dd509",
+      "git_blob": "e0810a47ab622706391703141251afca012d8c27",
+      "physical_lines": 497,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/page.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/page.py",
+      "sha256": "58a076a5f7035f0307599952c70a8920a595edbb2b919cf436ad089b3713d032",
+      "git_blob": "2e2ff34f77bcf467e137e189e28843ffadfb56af",
+      "physical_lines": 1676,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/tokens.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/tokens.py",
+      "sha256": "803bfe4c511ba12c86334290906ea1782c079bb7525114b3e42f5786a43b97d6",
+      "git_blob": "6ba2f970cc038d64b26d9cd14a29f6a5a787184b",
+      "physical_lines": 329,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/utils.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/utils.py",
+      "sha256": "c2705fbdb97b02366f7123edeec54e1657d1f6c2eb522a21b0154e8e349f0f39",
+      "git_blob": "cc631917bd6408ab81aa223321929ee77865dfa6",
+      "physical_lines": 413,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/doc/webvtt.py",
+      "copied_path": "components/docling-core/docling_core/types/doc/webvtt.py",
+      "sha256": "92b3e3291d15f16f1e8e07e721055388c41e03fba606e12ae17c1941464ecd34",
+      "git_blob": "10f72c52ab2a178a3a96bd25f34ac9101bdb3583",
+      "physical_lines": 744,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/io/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/io/__init__.py",
+      "sha256": "c627704b7d113bd5224bbb056dfb4be51a72f4cf8da045cf4bca80da7cfa8a59",
+      "git_blob": "8430c7596736c0b29365fd3ce4473fbe35ce5b27",
+      "physical_lines": 14,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/legacy_doc/__init__.py",
+      "copied_path": "components/docling-core/docling_core/types/legacy_doc/__init__.py",
+      "sha256": "85794671daa2e238f6b60ab7369a0d96d5bcae1ba63f87389876889f55e2cbcd",
+      "git_blob": "7760785ae50f798c7c278b499643610d60027e5f",
+      "physical_lines": 5,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/legacy_doc/base.py",
+      "copied_path": "components/docling-core/docling_core/types/legacy_doc/base.py",
+      "sha256": "8cd87560c4a3ae79ecb9317a70f6b9d6b808a391ff57cd5ba357ce2e682f4be6",
+      "git_blob": "44a15b0912e1cfc3f05cc37aae7b6eed62f7b384",
+      "physical_lines": 41,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/types/legacy_doc/document.py",
+      "copied_path": "components/docling-core/docling_core/types/legacy_doc/document.py",
+      "sha256": "ec2cb42b640b20efddb58bf4ff65c05ffc98e94ab2a130b47ba10f7cef5ed6b9",
+      "git_blob": "cad0f4d3aae1db8582845a99a67b29eb210a73aa",
+      "physical_lines": 17,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/__init__.py",
+      "copied_path": "components/docling-core/docling_core/utils/__init__.py",
+      "sha256": "f721491db1b5a410fd9f9fcd0d82f4b35c110cea3a70df1fdaa47ca372111949",
+      "git_blob": "6893d3ab9407ae3828a13c1321ae04b26c71cda8",
+      "physical_lines": 1,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/alias.py",
+      "copied_path": "components/docling-core/docling_core/utils/alias.py",
+      "sha256": "6f976e3c759591eadb13df32c8be222bb0552f99e7f54d6dda49d8ae45effaa1",
+      "git_blob": "b20b66d13731e93d00528f95f6f8c00297ba7bf1",
+      "physical_lines": 23,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/file.py",
+      "copied_path": "components/docling-core/docling_core/utils/file.py",
+      "sha256": "11d5dd8077a397f2e4624d397cb3a7a8a525e3dc3d466043fc2303aabcd4fb18",
+      "git_blob": "779136b9c678b88cd9ff2607b83cbaa31684c913",
+      "physical_lines": 451,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/generate_docs.py",
+      "copied_path": "components/docling-core/docling_core/utils/generate_docs.py",
+      "sha256": "8e23380e8b1562f7a38667a9c3d8a51d5b5a1e57e7c61f2232960e1c4d2a895a",
+      "git_blob": "92b94d17714b6eab5d882a5352fd5b62343f8016",
+      "physical_lines": 74,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/generate_jsonschema.py",
+      "copied_path": "components/docling-core/docling_core/utils/generate_jsonschema.py",
+      "sha256": "0a9a9f47786429943886ebadabe4672c39bfd607d7a7c496b0481376b83d38f9",
+      "git_blob": "0f90177481f46671cd3dfea6ea12931bbed04711",
+      "physical_lines": 54,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/legacy.py",
+      "copied_path": "components/docling-core/docling_core/utils/legacy.py",
+      "sha256": "cbaf9f92998521107706a47135d48804966f273f9fde70c8d56a6f6f2ea9c5a4",
+      "git_blob": "6d37f3284bc67d8bd112cbc71478d623d2f17c8b",
+      "physical_lines": 25,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/settings.py",
+      "copied_path": "components/docling-core/docling_core/utils/settings.py",
+      "sha256": "8752770827306611db73f1f094008f8a98115c1b33cf6da54343e36cf4669dc5",
+      "git_blob": "712a50599f20c34fd3f9dc1048c52a4fd5364fc3",
+      "physical_lines": 31,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "docling_core/utils/validators.py",
+      "copied_path": "components/docling-core/docling_core/utils/validators.py",
+      "sha256": "64ccf01d6b54fcff8844fdf1c0cad548d0779bbe2b91d52a6c3b18350bfcc073",
+      "git_blob": "9badfd068a7568e411a39c75e9e6eb98d6a8bebe",
+      "physical_lines": 52,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "LICENSE",
+      "copied_path": "components/docling-core/LICENSE",
+      "sha256": "d8cf7ee84a10d6cc45ced4ce917180b7050326f9d66801dd07d058595c06908c",
+      "git_blob": "671b116e543b17720685f3868800226e84b1ce12",
+      "physical_lines": 21,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "README.md",
+      "copied_path": "components/docling-core/README.md",
+      "sha256": "f1058d3e5bd9abd5108eb360f1ee535bbf104804045acd2ba5091651bb5e3270",
+      "git_blob": "acd121a4afba059d08f376979a9f12534b1db306",
+      "physical_lines": 110,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    },
+    {
+      "component": "docling-core",
+      "upstream_path": "pyproject.toml",
+      "copied_path": "components/docling-core/pyproject.toml",
+      "sha256": "5fc22339886038aadbbe5f59c0d91855d54971b6d8e57c2db28fbc3300704fb2",
+      "git_blob": "166882236598489ff12a583e6ea585b45840ea5d",
+      "physical_lines": 262,
+      "status": "copied unchanged Git blob",
+      "modified_lines": 0
+    }
+  ],
+  "comparison_snapshot": {
+    "intake_review.py": "59bc4866f85fda6ee779fa429bbdedc0f6a6bf4868079b39750ce6e0d0cf3692",
+    "tests/test_intake.py": "7e5e2399897268f198da71df3ed785d58125c46f3c324ca5c87bb1cc75c9a862",
+    "tools/demo.py": "340e42e95479c87e30e97f83d434294a05abb203cd27101a4715f78c9959bb7a",
+    "pyproject.toml": "ed43995d136787941ee4dabe66131da01003955701a9380f0a6735b5dc38cd05"
+  }
+}

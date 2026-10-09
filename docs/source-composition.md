@@ -1,0 +1,26 @@
+# Verified source composition
+
+The source installer builds the copied packages instead of installing remote Docling distributions. All 401 copied Git blobs are unchanged: Docling contributes 292 source/build files and Core contributes 109. This complete-package route retains original imports, serialization code and metadata. It includes optional format/model code as unexecuted source; it includes no model weights or binary assets.
+
+Both platforms built local source wheels, installed them with `--no-index --no-deps`, and passed `pip check`. The source receipts verify every packaged component file against its copied Git-blob SHA-256, preserve the exact original license inside each wheel, and match the installed distribution's `direct_url.json` archive hash to the actual built wheel. That wheel-hash comparison belongs to the build verification; the runtime guard requires a file-based wheel URL and a nonempty archive hash without independently validating that hash. The runtime receipts then verify 101 loaded Docling/Core modules and record their actual `__file__` paths and normalized-LF source hashes. A site-packages path is expected after a source-wheel install; its build and byte correspondence establish the source-copy route.
+
+| Check | Linux | Windows |
+|---|---|---|
+| New environment, copied-source build/install, dependency check | Passed | Passed after the retained path-limit failure and short internal build staging |
+| Original Å® unchanged duplicate Å® installed composition | Exact schema, Markdown, table, item-reference and hash equality | Unverified; original extraction stopped after the retained newline mismatch |
+| Installed composition and runtime source identity | 101 loaded modules verified | 101 loaded modules verified |
+| Current inherited review tests and two new identity refusals | 36 passed | 35 passed, 1 skipped because symlink creation was unavailable |
+| Installed CLI demo | 12 commands, 7 approved items exported | 12 commands, 7 approved items exported |
+| Scoped Ruff check | Passed | Passed |
+
+All three Linux stages produced the same seven items, a 3Å~3 table and content SHA-256 `972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b`. The composed Windows run produced that same hash, but that fact is not relabeled as a Windows original-source baseline. Composed execution refused pending export, rejected export, changed-source export, a stale decision and export of a new pending version. The inherited suite also verifies changed review records, decision tampering, legacy fail-closed decisions, atomic output, path bounds and real schema/provenance behavior.
+
+`comparison-snapshot/intake_review.py` retains SHA-256 `59bc4866f85fda6ee779fa429bbdedc0f6a6bf4868079b39750ce6e0d0cf3692`; its tests retain `7e5e2399897268f198da71df3ed785d58125c46f3c324ca5c87bb1cc75c9a862`. The composed module adds the source-identity check and the import ordering needed by lint. Its Store class AST and the inherited test file remain unchanged, including the repaired decision checksum and refusal of legacy approvals. The source-identity tests additionally refuse a registry distribution without local-wheel origin and changed runtime module bytes.
+
+The saved upstream worktrees are sparse. Linux restored the complete original source independently through `git archive` from the pinned Git object and checked every blob before execution. Windows retained three failed original-restoration observations: the sparse missing module, a long extraction path, and raw newline conversion for `py.typed`/LICENSE. The final Windows attempt used a fresh short path and command-local `core.autocrlf=false`; `py.typed` still failed raw-byte verification. Further Windows extraction was stopped. The compact public record in `docs/verification.json` retains this unverified boundary; machine-specific failure logs are excluded. Completing the Windows three-stage comparison requires restoring the original bytes through raw Git blob I/O and verifying the complete tree before execution. That comparison has not been completed.
+
+Git reported automatic packing during Linux reference restoration. The pre-composition application and tests, inspected backend and Core schema hashes, and both upstream HEAD refs remain unchanged. Git-directory bytes were not compared. The source build and runtime checks used separate local workspaces.
+
+`docs/verification.json` records these composition checks and source identities without machine-specific paths. The source installer writes new `.source-build/<label>/install.json` receipts. To produce a new installed-composition receipt, run `tools/verify_source.py --installed-only --label <new-label> --reference-dir .` with the installed environment's Python. For a Linux three-stage comparison, supply a directory containing pinned Git repositories named `upstream-docling` and `upstream-core` through `--reference-dir` and omit `--installed-only`. Use a fresh label each time. These results are this composition's executions, not a restatement of prior 34-test receipts.
+
+The full upstream suites, remote CI, production use and external integrations remain unverified. The result is a bounded local conversion/schema composition with its preexisting review gate; it is not a source-derived upstream review application.
