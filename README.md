@@ -9,9 +9,9 @@ The conversion and schema components are actual duplicated upstream package sour
 | Start here | Purpose |
 | --- | --- |
 | [intake_review.py](intake_review.py) and [tools/demo.py](tools/demo.py) | Review/export adapter and runnable demonstration |
-| [tests/](tests/) | Review/export and copied-source identity checks |
+| [tests/test_intake.py](tests/test_intake.py) and [tests/test_source_identity.py](tests/test_source_identity.py) | Review/export and copied-source identity checks |
 | [tools/install_source.py](tools/install_source.py) | Build and install the local copied packages |
-| [docs/architecture.md](docs/architecture.md) and [docs/source-composition.md](docs/source-composition.md) | Data flow, reuse boundary and recorded comparison |
+| [docs/architecture.md](docs/architecture.md), [docs/source-composition.md](docs/source-composition.md) and [docs/verification.json](docs/verification.json) | Data flow, reuse boundary and recorded comparison |
 | [components/](components/) and [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json) | Unchanged package source, licenses and exact identities |
 | [REFERENCES.md](REFERENCES.md) | Research context and limits |
 
