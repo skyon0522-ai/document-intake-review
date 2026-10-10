@@ -1,9 +1,13 @@
 # Document Intake Review
 
+## Problem
+
 Document Intake Review turns a local Markdown handbook or DoclingDocument JSON
 file into JSONL only after a reviewer checks the exact converted version and
 approves its content hash. If the source changes, an old approval cannot be
 used for export.
+
+## Demo
 
 ![Observed input, approval and export walkthrough](docs/assets/intake-review.png)
 
@@ -12,7 +16,7 @@ synthetic input, what the reviewer sees, each blocked and approved transition,
 and the actual exported records. For the implementation path, see
 [entry points and data flow](docs/architecture.md).
 
-## What the demo actually does
+### Example sequence
 
 The checked-in [fixture](fixtures/intake.md) is a customer-free service
 handbook. The demo copies it into a new workspace, then changes only that copy.
@@ -40,7 +44,7 @@ workflow or an external-index uploader.
 The export hash is run-specific because exported records retain the decision
 timestamp. Compare a run with the hash in that run's receipt.
 
-## Run it locally
+### Run it locally
 
 Use Python 3.12. The source installer creates `.v`, installs locked runtime and
 test dependencies, builds the local adapter and its included source packages,
@@ -80,11 +84,12 @@ review use local files. Do not substitute `pip install .`: the installer
 builds the included packages and installs their wheels without package-index
 fallback.
 
-The CI workflow is configured to run this demo with the installed `.v` Python
-after source installation and verification. That CI step has not run for this
-change yet.
+## What this project adds
 
-## Find the implementation
+The local adapter adds version tracking, approval bound to the converted content hash,
+and export checks around document conversion. The walkthrough demonstrates both
+blocked transitions and the approved export. The implementation links below identify
+these additions; the included conversion packages retain their own licenses.
 
 | If you want to… | Start here |
 | --- | --- |
@@ -96,6 +101,16 @@ change yet.
 | Run the review and source-identity tests | [`tests/`](tests/) |
 | Read the reference and design checks | [`DESIGN.md`](DESIGN.md) |
 
+## Verification
+
+Checked on **2026-10-11 (JST)**: [GitHub Actions run 38068770337](https://github.com/skyon0522-ai/document-intake-review/actions/runs/38068770337) passed for commit [`3340259edf37c1e0402ea64d1955f73f5d40dfae`](https://github.com/skyon0522-ai/document-intake-review/commit/3340259edf37c1e0402ea64d1955f73f5d40dfae). The successful run includes source installation, verification, and the installed-CLI demo. This records the tested commit; it does not claim a later revision has passed.
+
+The recorded local Windows suite passed 37 tests and skipped one symlink case.
+The installed-CLI demo exercised 12 commands and checked the exported bytes against
+that run's receipt. The local counts and remote CI are separate observations.
+
+## Limits
+
 Markdown and validated DoclingDocument JSON use the same review and export
 gate. The converter disables local, remote, and image fetching. The demo uses
 only the checked-in synthetic Markdown fixture. PDF/OCR, model weights,
@@ -105,3 +120,7 @@ index upload are outside this implementation.
 The adapter is MIT-licensed ([LICENSE](LICENSE)). The included packages retain
 their license files: [Docling](components/docling-slim/LICENSE) and
 [Docling Core](components/docling-core/LICENSE).
+
+## Security and reporting
+
+Read [security limits and reporting guidance](SECURITY.md) before adapting this example.
