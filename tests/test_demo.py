@@ -1,9 +1,14 @@
 import hashlib
 import json
+from pathlib import Path
+from runpy import run_path
 
 import pytest
 
-from tools.demo import render_result_html
+# Load by file path so importlib-mode tests do not need the checkout on sys.path.
+render_result_html = run_path(
+    Path(__file__).resolve().parents[1] / "tools" / "demo.py"
+)["render_result_html"]
 
 
 def demo_result():
