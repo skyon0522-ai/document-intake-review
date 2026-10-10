@@ -1,46 +1,107 @@
-# Document Intake Review — source-based composition
+# Document Intake Review
 
-This local CLI converts Markdown and accepts DoclingDocument JSON. A reviewer examines the exact version and its content hash before JSONL export. Changed source bytes, pending or rejected versions, damaged decisions and legacy unsealed decisions block export.
+Document Intake Review turns a local Markdown handbook or DoclingDocument JSON
+file into JSONL only after a reviewer checks the exact converted version and
+approves its content hash. If the source changes, an old approval cannot be
+used for export.
 
-The conversion and schema components are actual duplicated upstream package source. `components/docling-slim` is Docling v2.135.0 at `2b3a00c5bfcd8b218d32e7e9c33d509aeaa0cb56`. `components/docling-core` is Docling Core v2.101.1 at `f61fbf5cd4384a6307c63131a3f2f70d517b5f51`. Original build metadata, licenses and copyright notices are retained. No parser or schema implementation was rewritten.
+![Observed input, approval and export walkthrough](docs/assets/intake-review.png)
 
-## Repository map
+Start with the [saved offline demo result](docs/demo-result.html). It shows the
+synthetic input, what the reviewer sees, each blocked and approved transition,
+and the actual exported records. For the implementation path, see
+[entry points and data flow](docs/architecture.md).
 
-| Start here | Purpose |
+## What the demo actually does
+
+The checked-in [fixture](fixtures/intake.md) is a customer-free service
+handbook. The demo copies it into a new workspace, then changes only that copy.
+Its response-target table contains `High | Operations | 4` and
+`Normal | Service desk | 24`; after exporting version 1, the demo changes the
+first target from 4 to 6.
+
+The recorded run used Python 3.12.14 and the installed `intake-review` CLI.
+It ran 12 CLI commands and observed this sequence:
+
+| Input or action | Observed result |
 | --- | --- |
-| [intake_review.py](intake_review.py) and [tools/demo.py](tools/demo.py) | Review/export adapter and runnable demonstration |
-| [tests/test_intake.py](tests/test_intake.py) and [tests/test_source_identity.py](tests/test_source_identity.py) | Review/export and copied-source identity checks |
-| [tools/install_source.py](tools/install_source.py) | Build and install the local copied packages |
-| [docs/architecture.md](docs/architecture.md), [docs/source-composition.md](docs/source-composition.md) and [docs/verification.json](docs/verification.json) | Data flow, reuse boundary and recorded comparison |
-| [components/](components/) and [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json) | Unchanged package source, licenses and exact identities |
-| [REFERENCES.md](REFERENCES.md) | Research context and limits |
+| Intake the unchanged fixture | Version 1, pending; repeated intake reused version 1. |
+| Export before review approval | Blocked with exit code 2. |
+| Approve version 1 against its content SHA-256 | Approval recorded for that exact version. |
+| Export the approved version | `approved-v1.jsonl`, 7 records; the saved result shows this run's exact SHA-256. |
+| Change `Hours` from 4 to 6 and try the old export | Blocked with exit code 2 because the source bytes changed. |
+| Intake the changed fixture | Version 2, pending; an approval against version 1 and export of version 2 were both blocked with exit code 2. |
 
-The component directories preserve upstream package snapshots. Some copied README example/contribution links refer to files outside those snapshots. For the complete upstream guides, use the pinned [Docling repository](https://github.com/docling-project/docling/tree/2b3a00c5bfcd8b218d32e7e9c33d509aeaa0cb56) and [Docling Core repository](https://github.com/docling-project/docling-core/tree/f61fbf5cd4384a6307c63131a3f2f70d517b5f51). Use this root README for the assembled product's commands and scope.
+The saved HTML contains the exact fixture, normalized review text, gate errors,
+and JSONL output from that run. Its “Demo reviewer” label is illustrative,
+not an authenticated identity. This is a local review gate, not a hosted
+workflow or an external-index uploader.
 
-## Build and run
+The export hash is run-specific because exported records retain the decision
+timestamp. Compare a run with the hash in that run's receipt.
 
-Use Python 3.12 from a short checkout path on Windows. Run the source installer from a fresh checkout. It creates a new environment, installs the pinned normal dependencies, builds both copied upstream packages and this adapter, and installs only those three local wheels with `--no-index --no-deps`. It records all commands, outputs and wheel hashes in `.source-build/<label>/install.json`. Package downloads for normal dependencies and isolated build tooling are required; document conversion needs no network access.
+## Run it locally
+
+Use Python 3.12. The source installer creates `.v`, installs locked runtime and
+test dependencies, builds the local adapter and its included source packages,
+and records its commands and hashes under `.source-build/`.
 
 ```sh
 python tools/install_source.py
-# Windows
-.v/Scripts/python -m pytest -q
-.v/Scripts/python tools/demo.py --workspace demo-workspace --receipt demo-receipt.json
-# Linux
-.v/bin/python -m pytest -q
-.v/bin/python tools/demo.py --workspace demo-workspace --receipt demo-receipt.json
 ```
 
-Do not replace the source installer with `pip install .`: that would permit dependency resolution from a package index. The application requires file-based wheel origin metadata with a nonempty archive hash and checks loaded Docling module bytes against `SOURCE_MANIFEST.json`; an ordinary registry distribution without that origin is refused. The runtime guard does not compare that archive hash with a built wheel. The build receipts perform that comparison separately. The identity checks detect packaging mistakes and source changes, and do not authenticate against an owner who can rewrite the manifest and checks.
+Create a new output directory for each demo run because the demo refuses to
+overwrite an existing workspace, receipt, or HTML result.
 
-The installed command is `intake-review`. Create a workspace with `intake-review --workspace demo-workspace init`, copy a Markdown file into `demo-workspace/sources/`, and run `intake`, `review`, `decide` and `export`. The existing demo shows the exact command arguments and records installed CLI output. PDF, OCR, model weights, hosted services and external indexes are outside this slice.
+```powershell
+# Windows
+New-Item -ItemType Directory -Force .verification\demo-run | Out-Null
+.v\Scripts\python tools/demo.py `
+  --workspace .verification\demo-run\workspace `
+  --receipt .verification\demo-run\receipt.json `
+  --html .verification\demo-run\result.html
+.v\Scripts\python -m pytest -q
+```
 
-## Lineage and limits
+```sh
+# Linux
+mkdir -p .verification/demo-run
+.v/bin/python tools/demo.py \
+  --workspace .verification/demo-run/workspace \
+  --receipt .verification/demo-run/receipt.json \
+  --html .verification/demo-run/result.html
+.v/bin/python -m pytest -q
+```
 
-`SOURCE_MANIFEST.json` records every copied Git blob, SHA-256, original path, commit, physical line count and zero modified source lines. The complete upstream Python packages retain their own dependency graph; optional code for other formats and models remains present as source, without corresponding model dependencies, weights, fixtures or execution. This avoids extracting one parser file and replacing its required modules. `dependencies-lock.txt` distinguishes normal transitive dependencies from the two local-source packages.
+The HTML file is standalone and works offline. The JSON receipt preserves each
+CLI command, output, exit code, exported-file hash, and the saved HTML hash.
+Package downloads are needed for the initial installation; conversion and
+review use local files. Do not substitute `pip install .`: the installer
+builds the included packages and installs their wheels without package-index
+fallback.
 
-`comparison-snapshot/` preserves the repaired application and tests before integration. The application adds only the source-identity import/check. SQLite review decisions, their checksum repair, version gates and legacy fail-closed behavior remain inherited from that repaired application, not from Docling. Source-based composition does not establish inherited lineage for that review application itself.
+The CI workflow is configured to run this demo with the installed `.v` Python
+after source installation and verification. That CI step has not run for this
+change yet.
 
-The baseline uses the concrete upstream `tests/test_backend_markdown.py::test_convert_valid` construction sequence and Core schema/serialization contracts. Comparative receipts execute original pinned source, unchanged copied source and the installed composition against the same seven-item fixture. They include actual `__file__` paths and normalized source hashes. The focused inherited tests and CLI demo verify local review behavior. See `REFERENCES.md` and `docs/source-composition.md` for the inspected paths and evidence.
+## Find the implementation
 
-This is a local, owner-controlled review gate. Approval labels are not authenticated identities; integrity hashes are not signatures against an administrator. The recorded checks cover the local workflow; remote CI has not run.
+| If you want to… | Start here |
+| --- | --- |
+| Run the end-to-end example and save its receipt and HTML | [`tools/demo.py`](tools/demo.py) |
+| Inspect the exact CLI contract | [`intake_review.py`](intake_review.py), `main()` |
+| Follow Markdown/JSON conversion | [`intake_review.py`](intake_review.py), `convert()` |
+| Follow versioning, review, decisions, and export checks | [`intake_review.py`](intake_review.py), `Store` |
+| See the data boundary and decision flow | [Architecture](docs/architecture.md) |
+| Run the review and source-identity tests | [`tests/`](tests/) |
+| Read the reference and design checks | [`DESIGN.md`](DESIGN.md) |
+
+Markdown and validated DoclingDocument JSON use the same review and export
+gate. The converter disables local, remote, and image fetching. The demo uses
+only the checked-in synthetic Markdown fixture. PDF/OCR, model weights,
+authenticated reviewer identities, servers, retention services, and external
+index upload are outside this implementation.
+
+The adapter is MIT-licensed ([LICENSE](LICENSE)). The included packages retain
+their license files: [Docling](components/docling-slim/LICENSE) and
+[Docling Core](components/docling-core/LICENSE).

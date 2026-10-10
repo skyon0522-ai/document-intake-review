@@ -16,6 +16,13 @@ jobs:
         run: python tools/install_source.py
       - name: Verify the installed composition and review workflow
         run: .v/bin/python tools/verify_source.py --installed-only --label ci --reference-dir .
+      - name: Run the installed CLI demo
+        run: |
+          mkdir -p .verification/ci-demo
+          .v/bin/python tools/demo.py \
+            --workspace .verification/ci-demo/workspace \
+            --receipt .verification/ci-demo/receipt.json \
+            --html .verification/ci-demo/result.html
       - uses: actions/upload-artifact@v4
         if: always()
         with:

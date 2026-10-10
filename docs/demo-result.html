@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Intake Review — demo result</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font: 16px/1.55 system-ui, sans-serif;
+      color: #172b3a;
+      background: #f4f7f8;
+    }
+    body { margin: 0; }
+    main {
+      max-width: 920px;
+      margin: auto;
+      padding: 2rem clamp(1rem, 4vw, 3rem) 4rem;
+    }
+    header, section {
+      background: #fff;
+      border: 1px solid #d9e2e7;
+      border-radius: 12px;
+      padding: clamp(1rem, 3vw, 2rem);
+      margin: 1rem 0;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      max-width: 18ch;
+      margin: .3rem 0 1rem;
+    }
+    h2 { margin-top: 0; }
+    .eyebrow {
+      color: #47687b;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    nav ul { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; padding-left: 1.2rem; }
+    a { color: #075c83; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      overflow-wrap: anywhere;
+    }
+    pre {
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      background: #f0f4f6;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .table-scroll { max-width: 100%; overflow-x: auto; }
+    .table-scroll:focus-visible { outline: 3px solid #075c83; outline-offset: 3px; }
+    table { width: 100%; min-width: 46rem; border-collapse: collapse; }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: .65rem;
+      border-bottom: 1px solid #d9e2e7;
+    }
+    th { background: #eef3f5; }
+    .gate {
+      border-left: 4px solid #a44224;
+      padding: .3rem 1rem;
+      margin: 1rem 0;
+      background: #fff8f4;
+    }
+    .result {
+      border-left: 4px solid #16734a;
+      padding: .5rem 1rem;
+      background: #f0faf4;
+    }
+    .note { color: #425563; }
+    details { margin-top: 1rem; }
+    summary { cursor: pointer; font-weight: 650; }
+    @media print {
+      body { background: #fff; }
+      main { max-width: none; padding: 0; }
+      header, section { break-inside: avoid; border-color: #888; }
+      nav { display: none; }
+      details:not([open]) > *:not(summary) { display: block !important; }
+      details > summary { display: none; }
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; table-layout: fixed; }
+      th, td { overflow-wrap: anywhere; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Offline demonstration · synthetic input</p>
+    <h1>Review the exact version before export</h1>
+    <p>A local Markdown intake creates a pending version. The demo shows the
+      content-hash approval gate, the approved JSONL output, and what happens
+      when the source changes.</p>
+    <p class="note">This demo label is not an authenticated reviewer identity.
+      No document is sent to an AI service or external index.</p>
+  </header>
+  <nav aria-label="Demo sections">
+    <ul>
+      <li><a href="#input">Input</a></li>
+      <li><a href="#review">Review and approval</a></li>
+      <li><a href="#export">Export</a></li>
+      <li><a href="#changed">Changed source</a></li>
+      <li><a href="#flow">Data flow</a></li>
+    </ul>
+  </nav>
+  <section id="input">
+    <h2>1. Synthetic handbook input</h2>
+    <p>The demo copies the checked-in fixture into a fresh workspace. It
+      contains response targets for Operations and the service desk, with no
+      customer data.</p>
+    <pre><code># Service handbook
+
+The operations team reviews changes before the handbook enters the knowledge system.
+
+## Response targets
+
+| Priority | Owner | Hours |
+| --- | --- | --- |
+| High | Operations | 4 |
+| Normal | Service desk | 24 |
+
+- Record the source document.
+- Review this version before approval.
+
+The sample contains no customer data.
+</code></pre>
+  </section>
+  <section id="review">
+    <h2>2. Review and approval</h2>
+    <p>Intake created version 1 with decision
+      <strong>pending</strong>. The reviewer view is bound
+      to content SHA-256 <code>972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b</code>.</p>
+    <details>
+      <summary>View the normalized content reviewed for version 1</summary>
+      <pre><code># Service handbook
+
+The operations team reviews changes before the handbook enters the knowledge system.
+
+## Response targets
+
+| Priority   | Owner        |   Hours |
+|------------|--------------|---------|
+| High       | Operations   |       4 |
+| Normal     | Service desk |      24 |
+
+- Record the source document.
+- Review this version before approval.
+
+The sample contains no customer data.
+</code></pre>
+    </details>
+    <article class="gate"><h3>Export before approval</h3><p><strong>Blocked · exit 2</strong></p><p>Selected latest version is pending or rejected.</p></article>
+    <div class="result">
+      <h3>Digest-bound demonstration decision</h3>
+      <p>Version 1 is
+        <strong>approve</strong> for the reviewed
+        content hash. Reviewer label: <strong>Demo reviewer</strong>.</p>
+      <p>Re-intaking unchanged bytes reused version
+        1: <strong>
+        true</strong>.</p>
+    </div>
+  </section>
+  <section id="export">
+    <h2>3. Approved JSONL result</h2>
+    <p class="result"><strong>7 records</strong> in
+      <code>exports/approved-v1.jsonl</code>. File SHA-256:
+      <code>1f04dcb59f126abfe3da15d719eaacea4e9ebda9ef5532f8d19a72ef8fd3246e</code>.</p>
+    <p>Record types: 2 list_item, 1 section_header, 1 table, 2 text, 1 title. The conversion returned
+      0 page references; this table shows each record's
+      values from the JSONL export.</p>
+    <div class="table-scroll" role="region"
+         aria-label="Exported JSONL records" tabindex="0">
+      <table>
+        <thead><tr>
+          <th scope="col">Item reference</th>
+          <th scope="col">Type</th>
+          <th scope="col">Content</th>
+          <th scope="col">Page refs</th>
+        </tr></thead>
+        <tbody><tr><td><code>#/texts/0</code></td><td>title</td><td>Service handbook</td><td>None</td></tr><tr><td><code>#/texts/1</code></td><td>text</td><td>The operations team reviews changes before the handbook enters the knowledge system.</td><td>None</td></tr><tr><td><code>#/texts/2</code></td><td>section_header</td><td>Response targets</td><td>None</td></tr><tr><td><code>#/tables/0</code></td><td>table</td><td>3 rows × 3 columns</td><td>None</td></tr><tr><td><code>#/texts/3</code></td><td>list_item</td><td>Record the source document.</td><td>None</td></tr><tr><td><code>#/texts/4</code></td><td>list_item</td><td>Review this version before approval.</td><td>None</td></tr><tr><td><code>#/texts/5</code></td><td>text</td><td>The sample contains no customer data.</td><td>None</td></tr></tbody>
+      </table>
+    </div>
+    <details>
+      <summary>Inspect the exact exported JSONL</summary>
+      <pre><code>{&quot;approval&quot;:{&quot;decided_at&quot;:&quot;2026-10-10T15:54:43.561395+00:00&quot;,&quot;reviewer&quot;:&quot;Demo reviewer&quot;},&quot;content_sha256&quot;:&quot;972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b&quot;,&quot;conversion&quot;:{&quot;backend&quot;:&quot;docling.backend.md_backend.MarkdownDocumentBackend.convert&quot;,&quot;confidence_note&quot;:&quot;Unavailable for this declarative conversion/import route.&quot;,&quot;docling_core&quot;:&quot;2.101.1&quot;,&quot;docling_slim&quot;:&quot;2.135.0&quot;,&quot;format&quot;:&quot;markdown&quot;,&quot;items&quot;:7,&quot;layout_score&quot;:null,&quot;ocr_score&quot;:null,&quot;pages&quot;:0,&quot;resource_fetch&quot;:&quot;disabled (local, remote and image fetch)&quot;,&quot;table_score&quot;:null},&quot;item&quot;:{&quot;children&quot;:[],&quot;content_layer&quot;:&quot;body&quot;,&quot;label&quot;:&quot;title&quot;,&quot;orig&quot;:&quot;Service handbook&quot;,&quot;parent&quot;:{&quot;cref&quot;:&quot;#/body&quot;},&quot;prov&quot;:[],&quot;self_ref&quot;:&quot;#/texts/0&quot;,&quot;text&quot;:&quot;Service handbook&quot;},&quot;item_ref&quot;:&quot;#/texts/0&quot;,&quot;page_refs&quot;:[],&quot;source_id&quot;:&quot;handbook.md&quot;,&quot;source_sha256&quot;:&quot;7a1d2f1f9fa4b3e95f82367f490e57415d9404dd90fcbd445ff4e03f284008e8&quot;,&quot;version&quot;:1}
+{&quot;approval&quot;:{&quot;decided_at&quot;:&quot;2026-10-10T15:54:43.561395+00:00&quot;,&quot;reviewer&quot;:&quot;Demo reviewer&quot;},&quot;content_sha256&quot;:&quot;972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b&quot;,&quot;conversion&quot;:{&quot;backend&quot;:&quot;docling.backend.md_backend.MarkdownDocumentBackend.convert&quot;,&quot;confidence_note&quot;:&quot;Unavailable for this declarative conversion/import route.&quot;,&quot;docling_core&quot;:&quot;2.101.1&quot;,&quot;docling_slim&quot;:&quot;2.135.0&quot;,&quot;format&quot;:&quot;markdown&quot;,&quot;items&quot;:7,&quot;layout_score&quot;:null,&quot;ocr_score&quot;:null,&quot;pages&quot;:0,&quot;resource_fetch&quot;:&quot;disabled (local, remote and image fetch)&quot;,&quot;table_score&quot;:null},&quot;item&quot;:{&quot;children&quot;:[],&quot;content_layer&quot;:&quot;body&quot;,&quot;label&quot;:&quot;text&quot;,&quot;orig&quot;:&quot;The operations team reviews changes before the handbook enters the knowledge system.&quot;,&quot;parent&quot;:{&quot;cref&quot;:&quot;#/body&quot;},&quot;prov&quot;:[],&quot;self_ref&quot;:&quot;#/texts/1&quot;,&quot;text&quot;:&quot;The operations team reviews changes before the handbook enters the knowledge system.&quot;},&quot;item_ref&quot;:&quot;#/texts/1&quot;,&quot;page_refs&quot;:[],&quot;source_id&quot;:&quot;handbook.md&quot;,&quot;source_sha256&quot;:&quot;7a1d2f1f9fa4b3e95f82367f490e57415d9404dd90fcbd445ff4e03f284008e8&quot;,&quot;version&quot;:1}
+{&quot;approval&quot;:{&quot;decided_at&quot;:&quot;2026-10-10T15:54:43.561395+00:00&quot;,&quot;reviewer&quot;:&quot;Demo reviewer&quot;},&quot;content_sha256&quot;:&quot;972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b&quot;,&quot;conversion&quot;:{&quot;backend&quot;:&quot;docling.backend.md_backend.MarkdownDocumentBackend.convert&quot;,&quot;confidence_note&quot;:&quot;Unavailable for this declarative conversion/import route.&quot;,&quot;docling_core&quot;:&quot;2.101.1&quot;,&quot;docling_slim&quot;:&quot;2.135.0&quot;,&quot;format&quot;:&quot;markdown&quot;,&quot;items&quot;:7,&quot;layout_score&quot;:null,&quot;ocr_score&quot;:null,&quot;pages&quot;:0,&quot;resource_fetch&quot;:&quot;disabled (local, remote and image fetch)&quot;,&quot;table_score&quot;:null},&quot;item&quot;:{&quot;children&quot;:[],&quot;content_layer&quot;:&quot;body&quot;,&quot;label&quot;:&quot;section_header&quot;,&quot;level&quot;:1,&quot;orig&quot;:&quot;Response targets&quot;,&quot;parent&quot;:{&quot;cref&quot;:&quot;#/body&quot;},&quot;prov&quot;:[],&quot;self_ref&quot;:&quot;#/texts/2&quot;,&quot;text&quot;:&quot;Response targets&quot;},&quot;item_ref&quot;:&quot;#/texts/2&quot;,&quot;page_refs&quot;:[],&quot;source_id&quot;:&quot;handbook.md&quot;,&quot;source_sha256&quot;:&quot;7a1d2f1f9fa4b3e95f82367f490e57415d9404dd90fcbd445ff4e03f284008e8&quot;,&quot;version&quot;:1}
+{&quot;approval&quot;:{&quot;decided_at&quot;:&quot;2026-10-10T15:54:43.561395+00:00&quot;,&quot;reviewer&quot;:&quot;Demo reviewer&quot;},&quot;content_sha256&quot;:&quot;972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b&quot;,&quot;conversion&quot;:{&quot;backend&quot;:&quot;docling.backend.md_backend.MarkdownDocumentBackend.convert&quot;,&quot;confidence_note&quot;:&quot;Unavailable for this declarative conversion/import route.&quot;,&quot;docling_core&quot;:&quot;2.101.1&quot;,&quot;docling_slim&quot;:&quot;2.135.0&quot;,&quot;format&quot;:&quot;markdown&quot;,&quot;items&quot;:7,&quot;layout_score&quot;:null,&quot;ocr_score&quot;:null,&quot;pages&quot;:0,&quot;resource_fetch&quot;:&quot;disabled (local, remote and image fetch)&quot;,&quot;table_score&quot;:null},&quot;item&quot;:{&quot;annotations&quot;:[],&quot;captions&quot;:[],&quot;children&quot;:[],&quot;content_layer&quot;:&quot;body&quot;,&quot;data&quot;:{&quot;grid&quot;:[[{&quot;col_span&quot;:1,&quot;column_header&quot;:true,&quot;end_col_offset_idx&quot;:1,&quot;end_row_offset_idx&quot;:1,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:0,&quot;start_row_offset_idx&quot;:0,&quot;text&quot;:&quot;Priority&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:true,&quot;end_col_offset_idx&quot;:2,&quot;end_row_offset_idx&quot;:1,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:1,&quot;start_row_offset_idx&quot;:0,&quot;text&quot;:&quot;Owner&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:true,&quot;end_col_offset_idx&quot;:3,&quot;end_row_offset_idx&quot;:1,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:2,&quot;start_row_offset_idx&quot;:0,&quot;text&quot;:&quot;Hours&quot;}],[{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:1,&quot;end_row_offset_idx&quot;:2,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:0,&quot;start_row_offset_idx&quot;:1,&quot;text&quot;:&quot;High&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:2,&quot;end_row_offset_idx&quot;:2,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:1,&quot;start_row_offset_idx&quot;:1,&quot;text&quot;:&quot;Operations&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:3,&quot;end_row_offset_idx&quot;:2,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:2,&quot;start_row_offset_idx&quot;:1,&quot;text&quot;:&quot;4&quot;}],[{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:1,&quot;end_row_offset_idx&quot;:3,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:0,&quot;start_row_offset_idx&quot;:2,&quot;text&quot;:&quot;Normal&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:2,&quot;end_row_offset_idx&quot;:3,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:1,&quot;start_row_offset_idx&quot;:2,&quot;text&quot;:&quot;Service desk&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:3,&quot;end_row_offset_idx&quot;:3,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:2,&quot;start_row_offset_idx&quot;:2,&quot;text&quot;:&quot;24&quot;}]],&quot;num_cols&quot;:3,&quot;num_rows&quot;:3,&quot;orientation&quot;:&quot;rot_0&quot;,&quot;table_cells&quot;:[{&quot;col_span&quot;:1,&quot;column_header&quot;:true,&quot;end_col_offset_idx&quot;:1,&quot;end_row_offset_idx&quot;:1,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:0,&quot;start_row_offset_idx&quot;:0,&quot;text&quot;:&quot;Priority&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:true,&quot;end_col_offset_idx&quot;:2,&quot;end_row_offset_idx&quot;:1,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:1,&quot;start_row_offset_idx&quot;:0,&quot;text&quot;:&quot;Owner&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:true,&quot;end_col_offset_idx&quot;:3,&quot;end_row_offset_idx&quot;:1,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:2,&quot;start_row_offset_idx&quot;:0,&quot;text&quot;:&quot;Hours&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:1,&quot;end_row_offset_idx&quot;:2,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:0,&quot;start_row_offset_idx&quot;:1,&quot;text&quot;:&quot;High&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:2,&quot;end_row_offset_idx&quot;:2,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:1,&quot;start_row_offset_idx&quot;:1,&quot;text&quot;:&quot;Operations&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:3,&quot;end_row_offset_idx&quot;:2,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:2,&quot;start_row_offset_idx&quot;:1,&quot;text&quot;:&quot;4&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:1,&quot;end_row_offset_idx&quot;:3,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:0,&quot;start_row_offset_idx&quot;:2,&quot;text&quot;:&quot;Normal&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:2,&quot;end_row_offset_idx&quot;:3,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:1,&quot;start_row_offset_idx&quot;:2,&quot;text&quot;:&quot;Service desk&quot;},{&quot;col_span&quot;:1,&quot;column_header&quot;:false,&quot;end_col_offset_idx&quot;:3,&quot;end_row_offset_idx&quot;:3,&quot;fillable&quot;:false,&quot;row_header&quot;:false,&quot;row_section&quot;:false,&quot;row_span&quot;:1,&quot;start_col_offset_idx&quot;:2,&quot;start_row_offset_idx&quot;:2,&quot;text&quot;:&quot;24&quot;}]},&quot;footnotes&quot;:[],&quot;label&quot;:&quot;table&quot;,&quot;parent&quot;:{&quot;cref&quot;:&quot;#/body&quot;},&quot;prov&quot;:[],&quot;references&quot;:[],&quot;self_ref&quot;:&quot;#/tables/0&quot;},&quot;item_ref&quot;:&quot;#/tables/0&quot;,&quot;page_refs&quot;:[],&quot;source_id&quot;:&quot;handbook.md&quot;,&quot;source_sha256&quot;:&quot;7a1d2f1f9fa4b3e95f82367f490e57415d9404dd90fcbd445ff4e03f284008e8&quot;,&quot;version&quot;:1}
+{&quot;approval&quot;:{&quot;decided_at&quot;:&quot;2026-10-10T15:54:43.561395+00:00&quot;,&quot;reviewer&quot;:&quot;Demo reviewer&quot;},&quot;content_sha256&quot;:&quot;972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b&quot;,&quot;conversion&quot;:{&quot;backend&quot;:&quot;docling.backend.md_backend.MarkdownDocumentBackend.convert&quot;,&quot;confidence_note&quot;:&quot;Unavailable for this declarative conversion/import route.&quot;,&quot;docling_core&quot;:&quot;2.101.1&quot;,&quot;docling_slim&quot;:&quot;2.135.0&quot;,&quot;format&quot;:&quot;markdown&quot;,&quot;items&quot;:7,&quot;layout_score&quot;:null,&quot;ocr_score&quot;:null,&quot;pages&quot;:0,&quot;resource_fetch&quot;:&quot;disabled (local, remote and image fetch)&quot;,&quot;table_score&quot;:null},&quot;item&quot;:{&quot;children&quot;:[],&quot;content_layer&quot;:&quot;body&quot;,&quot;enumerated&quot;:false,&quot;label&quot;:&quot;list_item&quot;,&quot;marker&quot;:&quot;&quot;,&quot;orig&quot;:&quot;Record the source document.&quot;,&quot;parent&quot;:{&quot;cref&quot;:&quot;#/groups/0&quot;},&quot;prov&quot;:[],&quot;self_ref&quot;:&quot;#/texts/3&quot;,&quot;text&quot;:&quot;Record the source document.&quot;},&quot;item_ref&quot;:&quot;#/texts/3&quot;,&quot;page_refs&quot;:[],&quot;source_id&quot;:&quot;handbook.md&quot;,&quot;source_sha256&quot;:&quot;7a1d2f1f9fa4b3e95f82367f490e57415d9404dd90fcbd445ff4e03f284008e8&quot;,&quot;version&quot;:1}
+{&quot;approval&quot;:{&quot;decided_at&quot;:&quot;2026-10-10T15:54:43.561395+00:00&quot;,&quot;reviewer&quot;:&quot;Demo reviewer&quot;},&quot;content_sha256&quot;:&quot;972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b&quot;,&quot;conversion&quot;:{&quot;backend&quot;:&quot;docling.backend.md_backend.MarkdownDocumentBackend.convert&quot;,&quot;confidence_note&quot;:&quot;Unavailable for this declarative conversion/import route.&quot;,&quot;docling_core&quot;:&quot;2.101.1&quot;,&quot;docling_slim&quot;:&quot;2.135.0&quot;,&quot;format&quot;:&quot;markdown&quot;,&quot;items&quot;:7,&quot;layout_score&quot;:null,&quot;ocr_score&quot;:null,&quot;pages&quot;:0,&quot;resource_fetch&quot;:&quot;disabled (local, remote and image fetch)&quot;,&quot;table_score&quot;:null},&quot;item&quot;:{&quot;children&quot;:[],&quot;content_layer&quot;:&quot;body&quot;,&quot;enumerated&quot;:false,&quot;label&quot;:&quot;list_item&quot;,&quot;marker&quot;:&quot;&quot;,&quot;orig&quot;:&quot;Review this version before approval.&quot;,&quot;parent&quot;:{&quot;cref&quot;:&quot;#/groups/0&quot;},&quot;prov&quot;:[],&quot;self_ref&quot;:&quot;#/texts/4&quot;,&quot;text&quot;:&quot;Review this version before approval.&quot;},&quot;item_ref&quot;:&quot;#/texts/4&quot;,&quot;page_refs&quot;:[],&quot;source_id&quot;:&quot;handbook.md&quot;,&quot;source_sha256&quot;:&quot;7a1d2f1f9fa4b3e95f82367f490e57415d9404dd90fcbd445ff4e03f284008e8&quot;,&quot;version&quot;:1}
+{&quot;approval&quot;:{&quot;decided_at&quot;:&quot;2026-10-10T15:54:43.561395+00:00&quot;,&quot;reviewer&quot;:&quot;Demo reviewer&quot;},&quot;content_sha256&quot;:&quot;972b089424fc497d0a69511a022d1b7cc34edf0529670c41d46d8b03915bae4b&quot;,&quot;conversion&quot;:{&quot;backend&quot;:&quot;docling.backend.md_backend.MarkdownDocumentBackend.convert&quot;,&quot;confidence_note&quot;:&quot;Unavailable for this declarative conversion/import route.&quot;,&quot;docling_core&quot;:&quot;2.101.1&quot;,&quot;docling_slim&quot;:&quot;2.135.0&quot;,&quot;format&quot;:&quot;markdown&quot;,&quot;items&quot;:7,&quot;layout_score&quot;:null,&quot;ocr_score&quot;:null,&quot;pages&quot;:0,&quot;resource_fetch&quot;:&quot;disabled (local, remote and image fetch)&quot;,&quot;table_score&quot;:null},&quot;item&quot;:{&quot;children&quot;:[],&quot;content_layer&quot;:&quot;body&quot;,&quot;label&quot;:&quot;text&quot;,&quot;orig&quot;:&quot;The sample contains no customer data.&quot;,&quot;parent&quot;:{&quot;cref&quot;:&quot;#/body&quot;},&quot;prov&quot;:[],&quot;self_ref&quot;:&quot;#/texts/5&quot;,&quot;text&quot;:&quot;The sample contains no customer data.&quot;},&quot;item_ref&quot;:&quot;#/texts/5&quot;,&quot;page_refs&quot;:[],&quot;source_id&quot;:&quot;handbook.md&quot;,&quot;source_sha256&quot;:&quot;7a1d2f1f9fa4b3e95f82367f490e57415d9404dd90fcbd445ff4e03f284008e8&quot;,&quot;version&quot;:1}
+</code></pre>
+    </details>
+  </section>
+  <section id="changed">
+    <h2>4. Changed source requires a new review</h2>
+    <p>After the approved export, the demo changes its workspace copy of the
+      synthetic input and attempts the old export again. The changed bytes block
+      version 1.</p>
+    <article class="gate"><h3>Export after the source changed</h3><p><strong>Blocked · exit 2</strong></p><p>Source bytes changed since intake; intake and review a new version.</p></article>
+    <p>Intake then creates version 2 with decision
+      <strong>pending</strong>. A decision for the older
+      version is rejected, and the new pending version cannot be exported.</p>
+    <article class="gate"><h3>Approval against the stale version</h3><p><strong>Blocked · exit 2</strong></p><p>Stale version; review the latest intake version.</p></article>
+    <article class="gate"><h3>Export of the new pending version</h3><p><strong>Blocked · exit 2</strong></p><p>Selected latest version is pending or rejected.</p></article>
+    <p>Final status: latest decision <strong>pending</strong>;
+      integrity <strong>verified</strong>.</p>
+    <details>
+      <summary>View the changed synthetic input</summary>
+      <pre><code># Service handbook
+
+The operations team reviews changes before the handbook enters the knowledge system.
+
+## Response targets
+
+| Priority | Owner | Hours |
+| --- | --- | --- |
+| High | Operations | 6 |
+| Normal | Service desk | 24 |
+
+- Record the source document.
+- Review this version before approval.
+
+The sample contains no customer data.
+</code></pre>
+    </details>
+  </section>
+  <section id="flow">
+    <h2>Entry point and data flow</h2>
+    <ol>
+      <li><code>tools/demo.py</code> copies the fixture into a new local
+        workspace and drives the installed CLI.</li>
+      <li><code>intake_review.py</code> dispatches each command.
+        <code>Store.intake</code> converts the Markdown and saves a version;
+        <code>Store.review</code> reads that exact version;
+        <code>Store.decide</code> binds the decision to its content hash.</li>
+      <li><code>Store.export</code> checks current source bytes, version and
+        decision integrity, then writes JSONL under the workspace's
+        <code>exports/</code> directory.</li>
+    </ol>
+    <p class="note">Runtime: Python 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)].
+      Model weights: not installed or executed. External AI or index
+      upload: false.</p>
+  </section>
+</main>
+</body>
+</html>
