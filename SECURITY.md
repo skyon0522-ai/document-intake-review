@@ -1,8 +1,10 @@
 # Security and reporting
 
-This is an independently developed demonstration, not an audited production service.
-Use synthetic inputs only. See the README Limits section for the specific data,
-authentication, deployment, and runtime boundaries before adapting it.
+This is a local single-user tool, not an audited remote service. Choose documents
+you are authorized to process, keep the workspace under your control, and review
+sensitive exported text before sharing it. Reviewer labels are not authenticated
+identities. See [local operation and browser trust boundaries](docs/local-use.md)
+for the upload, filesystem, origin/CSRF and runtime limits.
 
 ## Report a problem
 

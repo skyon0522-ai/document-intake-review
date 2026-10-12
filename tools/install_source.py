@@ -87,6 +87,8 @@ for path in [
     "README.md",
     "LICENSE",
     "intake_review.py",
+    "intake_web.py",
+    "intake_sample.py",
     "source_identity/__init__.py",
     "source_identity/manifest.json",
 ]:

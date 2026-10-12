@@ -55,3 +55,33 @@ at 1440, 390 and 320 pixels. All three layouts had seven export rows and four
 blocked gates, no page overflow, broken section anchors, external requests or
 script errors, and a keyboard-focusable table region. The README image is an
 actual capture of the exported-record section. The desktop image was inspected.
+
+## Local browser review, 2026-10-13
+
+References inspected before implementation:
+
+- Existing `docs/demo-result.html`: preserve its one-column reading order,
+  exact normalized preview, separate hashes, visible gate states, native details,
+  16px type, focus styles, wrapping text and print behavior.
+- [Datasette](https://github.com/simonw/datasette): adopt a short purpose/demo/install
+  flow and an explicit local `serve` command that prints the browser URL.
+- [linear-tui](https://github.com/k1-c/linear-tui): put the useful operation first,
+  then installation and first-run commands, and preserve workspace continuity.
+  Its terminal layout and account connection are not part of this local tool.
+
+The reader is the local document owner checking a document before exporting it.
+The UI uses native file inputs, named labels, semantic tables, readable preview
+text, explicit approval/rejection buttons and visible error/success messages.
+The document list supports the add → review → decision → export path. Detailed
+Docling structure is available in-place without hiding version or hash information.
+The exact Markdown preview preserves whitespace and scrolls horizontally, with
+a visible scroll cue, so narrow screens retain Markdown table column alignment.
+The surrounding page and expandable JSON details continue to wrap normally.
+Workspace details remain discoverable in a native disclosure while the opening
+header focuses on the task. There is no JavaScript, remote asset, animation or
+additional design system. The editable sources are `intake_web.py` and the
+packaged sample in `intake_sample.py`.
+
+Actual HTTP regression requests check the installed wheel's behavior. Desktop
+and mobile browser observations and screenshots are separate evidence; checking
+HTML strings alone does not establish visual acceptance.

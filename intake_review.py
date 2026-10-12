@@ -493,7 +493,7 @@ class Store:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--workspace", type=Path, required=True)
+    parser.add_argument("--workspace", type=Path)
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("init")
     intake = commands.add_parser("intake")
@@ -513,9 +513,30 @@ def main(argv: list[str] | None = None) -> int:
     export = commands.add_parser("export")
     export.add_argument("--output", required=True)
     export.add_argument("--source")
+    server = commands.add_parser("serve", help="Open the local browser review interface")
+    server.add_argument("--port", type=int, default=8765)
+    commands.add_parser("demo", help="Create a new workspace with a pending sample document")
+    for command_parser in commands.choices.values():
+        command_parser.add_argument("--workspace", type=Path, dest="command_workspace")
     args = parser.parse_args(argv)
+    if args.command_workspace is not None:
+        if args.workspace is not None and args.workspace != args.command_workspace:
+            parser.error("Use one workspace path.")
+        args.workspace = args.command_workspace
+    if args.workspace is None:
+        parser.error("--workspace is required.")
     store = None
     try:
+        if args.command == "serve":
+            from intake_web import serve
+
+            serve(args.workspace, args.port)
+            return 0
+        if args.command == "demo":
+            from intake_sample import seed
+
+            print(json.dumps(seed(args.workspace), ensure_ascii=False, indent=2))
+            return 0
         store = Store(args.workspace)
         if args.command == "init":
             result = {"workspace": str(store.workspace), "max_source_bytes": MAX_BYTES}

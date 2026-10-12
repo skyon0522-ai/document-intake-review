@@ -2,14 +2,16 @@
 
 [Open the offline demo result](demo-result.html) for the checked-in synthetic Markdown input, the observed approval gates, and the exported JSONL records.
 
-The owner-controlled workspace contains `sources/`, `intake.sqlite3`, and `exports/`. No database or document is sent elsewhere. The CLI is a single module; SQLite transactions and standard filesystem primitives provide the local gate.
+The owner-controlled workspace contains `sources/`, `intake.sqlite3`, and `exports/`. No database or document is sent elsewhere. The CLI and local browser interface share the same Store; SQLite transactions and standard filesystem primitives provide the local gate.
 
 ## Entry points
 
 | Path | Responsibility |
 | --- | --- |
 | [`tools/demo.py`](../tools/demo.py) | Copies the synthetic fixture into a fresh workspace, runs the CLI sequence, and saves a receipt plus an optional standalone HTML result. |
-| [`intake_review.py`](../intake_review.py) `main()` | Parses `init`, `intake`, `review`, `decide`, `status`, and `export` commands and dispatches them to `Store`. |
+| [`intake_review.py`](../intake_review.py) `main()` | Preserves the existing CLI and adds `serve` and `demo`. |
+| [`intake_web.py`](../intake_web.py) | Serves escaped previews and native forms on loopback, checks Host/origin/CSRF, and delegates decisions/export to Store. |
+| [`intake_sample.py`](../intake_sample.py) | Seeds a fresh workspace with the packaged pending handbook; never records approval. |
 | [`intake_review.py`](../intake_review.py) `convert()` | Uses Docling's Markdown backend or validates DoclingDocument JSON; local, remote, and image fetching are disabled. |
 | [`intake_review.py`](../intake_review.py) `Store` | Saves versions, verifies the reviewed content hash, records the immutable decision, and validates current bytes before export. |
 | [`source_identity/__init__.py`](../source_identity/__init__.py) | Refuses registry-origin distributions and checks loaded component files against the local manifest. |
@@ -40,4 +42,4 @@ Import, decision, and export use `BEGIN IMMEDIATE` to serialize local writers. E
 
 Default export omits latest pending/rejected versions. Explicit source export refuses either state. A source mismatch or a stale/damaged selected approval fails the whole operation. The old stored bytes remain available for diagnosis, but only a latest version matching the current source can receive or use approval.
 
-This gate ends at approved JSONL. An external index uploader, authenticated reviewer system, production retention policy, PDF/OCR pipeline, server, or dashboard needs a separate implementation. None is implemented here.
+This gate ends at approved JSONL. The browser server is local and single-user. An external index uploader, authenticated reviewer system, production retention policy, PDF/OCR pipeline or remote multi-user service needs a separate implementation.

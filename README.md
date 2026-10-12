@@ -1,126 +1,94 @@
 # Document Intake Review
 
-## Problem
-
-Document Intake Review turns a local Markdown handbook or DoclingDocument JSON
-file into JSONL only after a reviewer checks the exact converted version and
-approves its content hash. If the source changes, an old approval cannot be
-used for export.
+Review local documents in your browser before they enter a knowledge system.
+Upload Markdown or DoclingDocument JSON, inspect the exact converted version,
+record an approval or rejection, and export approved current content as JSONL.
+If a source changes, its previous approval cannot authorize the new content.
 
 ## Demo
 
-![Observed input, approval and export walkthrough](docs/assets/intake-review.png)
+![Local browser review of the sample handbook](docs/assets/browser-review.png)
 
-Start with the [saved offline demo result](docs/demo-result.html). It shows the
-synthetic input, what the reviewer sees, each blocked and approved transition,
-and the actual exported records. For the implementation path, see
-[entry points and data flow](docs/architecture.md).
-
-### Example sequence
-
-The checked-in [fixture](fixtures/intake.md) is a customer-free service
-handbook. The demo copies it into a new workspace, then changes only that copy.
-Its response-target table contains `High | Operations | 4` and
-`Normal | Service desk | 24`; after exporting version 1, the demo changes the
-first target from 4 to 6.
-
-The recorded run used Python 3.12.14 and the installed `intake-review` CLI.
-It ran 12 CLI commands and observed this sequence:
-
-| Input or action | Observed result |
-| --- | --- |
-| Intake the unchanged fixture | Version 1, pending; repeated intake reused version 1. |
-| Export before review approval | Blocked with exit code 2. |
-| Approve version 1 against its content SHA-256 | Approval recorded for that exact version. |
-| Export the approved version | `approved-v1.jsonl`, 7 records; the saved result shows this run's exact SHA-256. |
-| Change `Hours` from 4 to 6 and try the old export | Blocked with exit code 2 because the source bytes changed. |
-| Intake the changed fixture | Version 2, pending; an approval against version 1 and export of version 2 were both blocked with exit code 2. |
-
-The saved HTML contains the exact fixture, normalized review text, gate errors,
-and JSONL output from that run. Its “Demo reviewer” label is illustrative,
-not an authenticated identity. This is a local review gate, not a hosted
-workflow or an external-index uploader.
-
-The export hash is run-specific because exported records retain the decision
-timestamp. Compare a run with the hash in that run's receipt.
-
-### Run it locally
-
-Use Python 3.12. The source installer creates `.v`, installs locked runtime and
-test dependencies, builds the local adapter and its included source packages,
-and records its commands and hashes under `.source-build/`.
+The installed demo command creates a new workspace with a synthetic handbook
+in **pending** status. Open it in your browser and make the review decision
+yourself. The sample is included in the app wheel; a checkout is not needed
+after installation.
 
 ```sh
-python tools/install_source.py
+intake-review demo --workspace ./demo-workspace
+intake-review serve --workspace ./demo-workspace
 ```
 
-Create a new output directory for each demo run because the demo refuses to
-overwrite an existing workspace, receipt, or HTML result.
+Open the printed URL, normally **http://127.0.0.1:8765/**. Keep the terminal
+open while using the browser. Stop with Ctrl+C and use the same workspace to
+resume. To use another local port, add `--port 8766`.
+
+For a captured CLI example with actual gate errors and exported records, open
+the [offline demo result](docs/demo-result.html).
+
+## Install from this checkout
+
+Use **Python 3.12**. The source installer creates an isolated environment,
+installs locked dependencies, builds three local wheels, and installs those
+wheels. Initial setup downloads the locked dependencies; document operations
+remain local.
 
 ```powershell
-# Windows
-New-Item -ItemType Directory -Force .verification\demo-run | Out-Null
-.v\Scripts\python tools/demo.py `
-  --workspace .verification\demo-run\workspace `
-  --receipt .verification\demo-run\receipt.json `
-  --html .verification\demo-run\result.html
-.v\Scripts\python -m pytest -q
+# Windows PowerShell
+py -3.12 tools/install_source.py
+.v\Scripts\intake-review demo --workspace .\demo-workspace
+.v\Scripts\intake-review serve --workspace .\demo-workspace
 ```
 
 ```sh
 # Linux
-mkdir -p .verification/demo-run
-.v/bin/python tools/demo.py \
-  --workspace .verification/demo-run/workspace \
-  --receipt .verification/demo-run/receipt.json \
-  --html .verification/demo-run/result.html
-.v/bin/python -m pytest -q
+python3.12 tools/install_source.py
+.v/bin/intake-review demo --workspace ./demo-workspace
+.v/bin/intake-review serve --workspace ./demo-workspace
 ```
 
-The HTML file is standalone and works offline. The JSON receipt preserves each
-CLI command, output, exit code, exported-file hash, and the saved HTML hash.
-Package downloads are needed for the initial installation; conversion and
-review use local files. Do not substitute `pip install .`: the installer
-builds the included packages and installs their wheels without package-index
-fallback.
+Use a fresh environment and demo workspace. The installer keeps its command
+receipt and wheel hashes in `.source-build/`. Follow this source installer
+rather than installing the upstream packages from a registry: the runtime
+verifier requires the included, pinned source wheels.
 
-## What this project adds
+## Use your documents
 
-The local adapter adds version tracking, approval bound to the converted content hash,
-and export checks around document conversion. The walkthrough demonstrates both
-blocked transitions and the approved export. The implementation links below identify
-these additions; the included conversion packages retain their own licenses.
+1. Start `intake-review serve --workspace PATH` with your chosen local workspace.
+2. Choose **Add a document**, select a `.md` or `.json` file, and upload it.
+   Uploads are limited to 1 MiB and never overwrite an existing source.
+3. Read the exact normalized Markdown and, when needed, expand the Docling
+   document details. Enter a reviewer label and optional reason. Choose
+   **Approve this version** or **Reject this version**.
+4. Export the approved document, or export all approved current documents
+   from the Documents page. Choose a new `.jsonl` filename and download it.
 
-| If you want to… | Start here |
-| --- | --- |
-| Run the end-to-end example and save its receipt and HTML | [`tools/demo.py`](tools/demo.py) |
-| Inspect the exact CLI contract | [`intake_review.py`](intake_review.py), `main()` |
-| Follow Markdown/JSON conversion | [`intake_review.py`](intake_review.py), `convert()` |
-| Follow versioning, review, decisions, and export checks | [`intake_review.py`](intake_review.py), `Store` |
-| See the data boundary and decision flow | [Architecture](docs/architecture.md) |
-| Run the review and source-identity tests | [`tests/`](tests/) |
-| Read the reference and design checks | [`DESIGN.md`](DESIGN.md) |
+Decisions are immutable. To review changed content, edit the workspace's file
+under `sources/` and choose **Re-intake source**. New content creates a pending
+version. Unchanged content reuses its existing version and decision.
 
-## Verification
+## Boundaries and development
 
-Checked on **2026-10-11 (JST)**: [GitHub Actions run 38068770337](https://github.com/skyon0522-ai/document-intake-review/actions/runs/38068770337) passed for commit [`3340259edf37c1e0402ea64d1955f73f5d40dfae`](https://github.com/skyon0522-ai/document-intake-review/commit/3340259edf37c1e0402ea64d1955f73f5d40dfae). The successful run includes source installation, verification, and the installed-CLI demo. This records the tested commit; it does not claim a later revision has passed.
+The browser server binds only to `127.0.0.1`. It is for a single local user;
+reviewer labels are not authenticated identities. Document text is displayed
+as escaped text. Markdown resource fetching is disabled. PDF/OCR, model calls,
+cloud services and remote hosting are outside this tool's supported scope.
 
-The recorded local Windows suite passed 37 tests and skipped one symlink case.
-The installed-CLI demo exercised 12 commands and checked the exported bytes against
-that run's receipt. The local counts and remote CI are separate observations.
+See [local operation and security boundaries](docs/local-use.md),
+[architecture](docs/architecture.md), and
+[source identity and preserved licenses](docs/source-composition.md).
+The browser and CLI use the same `Store` approval and export rules.
 
-## Limits
+```sh
+.v/bin/python tools/verify_source.py --installed-only --label local-check --reference-dir .
+```
 
-Markdown and validated DoclingDocument JSON use the same review and export
-gate. The converter disables local, remote, and image fetching. The demo uses
-only the checked-in synthetic Markdown fixture. PDF/OCR, model weights,
-authenticated reviewer identities, servers, retention services, and external
-index upload are outside this implementation.
+On Windows, use `.v\Scripts\python` in that command. The verification command
+checks installed source identity, the review and HTTP regression suite, scoped
+lint, and the installed CLI demo. The CI workflow configures the same source
+installation and installed-app checks on Windows and Linux; a configuration
+change is not evidence that the remote workflow has run.
 
-The adapter is MIT-licensed ([LICENSE](LICENSE)). The included packages retain
-their license files: [Docling](components/docling-slim/LICENSE) and
-[Docling Core](components/docling-core/LICENSE).
-
-## Security and reporting
-
-Read [security limits and reporting guidance](SECURITY.md) before adapting this example.
+The app is [MIT-licensed](LICENSE). The copied Docling and Docling Core packages
+retain their [original](components/docling-slim/LICENSE)
+[licenses](components/docling-core/LICENSE). See [security reporting](SECURITY.md).

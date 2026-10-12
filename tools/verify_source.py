@@ -174,6 +174,8 @@ run(
         "ruff",
         "check",
         str(ROOT / "intake_review.py"),
+        str(ROOT / "intake_web.py"),
+        str(ROOT / "intake_sample.py"),
         str(ROOT / "source_identity"),
         str(ROOT / "tests"),
         str(ROOT / "tools"),

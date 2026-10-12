@@ -4,7 +4,19 @@ permissions:
   contents: read
 jobs:
   local-composition:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: .v/bin/python
+            label: linux
+          - os: windows-latest
+            python: .v/Scripts/python.exe
+            label: windows
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -12,22 +24,27 @@ jobs:
           python-version: '3.12'
           cache: pip
           cache-dependency-path: dependencies-lock.txt
-      - name: Build and install the copied packages
+      - name: Build and install all three copied-source wheels
         run: python tools/install_source.py
-      - name: Verify the installed composition and review workflow
-        run: .v/bin/python tools/verify_source.py --installed-only --label ci --reference-dir .
+      - name: Verify installed source, CLI and browser HTTP gates
+        run: ${{ matrix.python }} tools/verify_source.py --installed-only --label ci --reference-dir .
       - name: Run the installed CLI demo
         run: |
           mkdir -p .verification/ci-demo
-          .v/bin/python tools/demo.py \
+          ${{ matrix.python }} tools/demo.py \
             --workspace .verification/ci-demo/workspace \
             --receipt .verification/ci-demo/receipt.json \
             --html .verification/ci-demo/result.html
+      - name: Seed the packaged pending sample outside the checkout import path
+        run: |
+          cd .source-build
+          ../${{ matrix.python }} -m intake_review demo --workspace packaged-demo
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: source-composition-observations
+          name: source-composition-${{ matrix.label }}
           include-hidden-files: true
           path: |
-            .source-build/linux/install.json
+            .source-build/${{ matrix.label }}/install.json
             .verification/ci/verification.json
+            .verification/ci-demo/

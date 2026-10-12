@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "document-intake-review"
-version = "0.1.0"
+version = "0.2.0"
 description = "Local review gate composed with duplicated, pinned Docling source packages"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
@@ -18,7 +18,7 @@ test = ["pytest==8.4.2", "ruff==0.14.0"]
 intake-review = "intake_review:main"
 
 [tool.setuptools]
-py-modules = ["intake_review"]
+py-modules = ["intake_review", "intake_web", "intake_sample"]
 packages = ["source_identity"]
 
 [tool.setuptools.package-data]
